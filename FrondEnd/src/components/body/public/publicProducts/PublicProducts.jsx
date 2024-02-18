@@ -1,12 +1,17 @@
 import React from 'react'
-import Card from './cards/Card'
+
 import BarraBusquedaHome from './barraBusquedaHome/BarraBusquedaHome'
+import PublicCategorias from './publicCategorias/PublicCategorias'
+import PublicCard from './cards/PublicCard'
 
 const PublicProducts = () => {
+  
+
   return (
     <>
         <BarraBusquedaHome />
-        <Card/>
+        <PublicCategorias />
+        <PublicCard />       
     </>
   )
 }

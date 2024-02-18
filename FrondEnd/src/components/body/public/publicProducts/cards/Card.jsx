@@ -4,7 +4,10 @@ import { useApi } from '../../../../../context/ApiContext';
 
 const Card = () => {
   const { productos } = useApi();
+
   
+  
+  console.log(productos)
   
   return (
     <div>

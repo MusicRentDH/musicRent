@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter }  from 'react-router-dom';
 import PublicProducts from "./components/body/public/publicProducts/PublicProducts";
 import AdminProducts from "./components/body/admin/adminProducts/AdminProducts";
 import { ApiProvider } from "./context/ApiContext"; 
+import Footer from "./components/footer/Footer";
 
 
 
@@ -20,7 +21,7 @@ function App() {
           <Route path="/admin" element= {<AdminProducts/>} />
           <Route path="*" element={<p>Nor found</p>}/>
         </Routes>
-      <h1>Hola, soy footer</h1> 
+      <Footer/> 
       </ApiProvider>
       </BrowserRouter>             
     </>

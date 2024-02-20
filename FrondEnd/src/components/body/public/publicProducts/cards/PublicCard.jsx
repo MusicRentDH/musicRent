@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { CiStar } from 'react-icons/ci';
 import { PiShoppingCartLight } from 'react-icons/pi';
-import { IoHeartOutline } from 'react-icons/io5'; // Importa el icono de corazón
+import { IoHeartOutline } from 'react-icons/io5';
 import { useApi } from '../../../../../context/ApiContext';
 import './PublicCard.css';
 
 const PublicCard = () => {
   const { productos } = useApi();
   const [randomProductos, setRandomProductos] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false); // Nuevo estado para gestionar si es favorito
+  const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    // Obtener 10 productos al azar
     const shuffledProductos = productos.sort(() => 0.5 - Math.random());
     const selectedProductos = shuffledProductos.slice(0, 10);
     setRandomProductos(selectedProductos);
   }, [productos]);
 
   const handleFavoriteClick = () => {
-    setIsFavorite(!isFavorite); // Cambiar el estado al hacer clic
+    setIsFavorite(!isFavorite);
   };
 
   return (
+    <div>
+      <h2 className='title-instrumentos'>Instrumentos destacados</h2>
     <section className='card-container'>
       {randomProductos.map((producto) => (
         <section key={producto.id} className='card'>
@@ -57,6 +58,8 @@ const PublicCard = () => {
         </section>
       ))}
     </section>
+    </div>
   );
 };
+
 export default PublicCard;

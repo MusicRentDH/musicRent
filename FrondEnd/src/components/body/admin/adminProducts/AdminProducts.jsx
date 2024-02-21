@@ -3,7 +3,7 @@ import React from 'react';
 import { useApi } from '../../../../context/ApiContext';
 import { useTable } from 'react-table';
 import { FaEdit, FaTrash } from 'react-icons/fa';
-import './AdminProducts.css'; // Importa el archivo de estilos CSS
+import './AdminProducts.css'; 
 
 const AdminProducts = () => {
   const { productos } = useApi();

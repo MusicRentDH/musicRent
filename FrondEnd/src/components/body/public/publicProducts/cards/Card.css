@@ -1,0 +1,40 @@
+.card {
+    border: 2px solid #ededed;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 5%;
+    height: 320px;
+    width: 548px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin: 10px;
+  }
+  
+  .card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+ 
+  .card-title {
+    margin-bottom: 1rem;
+  }
+  
+  .card-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e54e13;
+  }
+  .card-img {
+    width: 45%; 
+    max-height: 320px; 
+    object-fit: cover; 
+    margin-bottom: 1rem;
+  }
+  

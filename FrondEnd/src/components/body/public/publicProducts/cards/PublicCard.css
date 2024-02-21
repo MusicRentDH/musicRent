@@ -1,3 +1,4 @@
+
 .card-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -6,99 +7,7 @@
   margin: 2rem;
 }
 
-.card {
-  border: 2px solid #ededed;
-  padding: 20px;
-  cursor: pointer;
-  background-color: #ffffff;
-  border-radius: 5%;
-  height: 354px; /* Reducción del 30% en la altura */
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  position: relative;
-  margin: 10px;
-}
-
-.round-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease-in-out, background-color 0.3s ease;
-}
-
-.round-button:hover {
-  background-color: #f7f7f7;
-}
-
-.favorite .round-button {
-  background-color: #e54e13;
-  border: 2px solid #e54e13;
-}
-
-.favorite:hover .round-button {
-  background-color: #e54e13;
-}
-
-.favorite {
-  transform: scale(1.2);
-}
-
-.heart-icon {
-  color: #e54e13;
-  font-size: 1.2rem;
-}
-
-.card-img-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.card-img {
-  width: 65%; /* Ajusta automáticamente al contenedor */
-  margin-bottom: 1rem;
-}
-
-.card-title {
-  margin-bottom: 1rem;
-}
-
-.card-reviews {
-  margin-bottom: 1rem;
-  display: flex;
-}
-
-.ratings-start {
-  color: #fda310;
-}
-
-.total-reviews {
-  font-size: 0.9rem;
-  margin-left: 10px;
-}
-
-.card-price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #e54e13;
-}
-
-.bag-icon {
-  color: #000000;
-}
-.title-instrumentos{
+.title-instrumentos {
   margin-left: 45px;
   margin-top: 10px;
 }

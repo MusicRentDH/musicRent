@@ -1,0 +1,42 @@
+/* Footer.css */
+.container {
+  background-color: #EEEEEE;
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  font-family: "Montserrat";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+
+.containeriz,
+.containerder {
+  flex: 1;
+  width: 100%;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100px;
+  font-size: 19px;
+}
+
+.containerder {
+  text-align: right;
+}
+
+.containeriz {
+  text-align: left;
+}
+
+p {
+  font-family: "Montserrat";
+  margin: 0;
+}
+
+.socialmedia {
+  text-align: right;
+}
+
+

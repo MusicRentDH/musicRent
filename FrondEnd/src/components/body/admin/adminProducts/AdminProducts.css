@@ -1,0 +1,72 @@
+.admin-table {
+  width: 65%;
+  margin: auto;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.header-cell {
+  background-color: #feebcc;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.data-cell {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.image-cell {
+  border: 1px solid #ccc;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 62px;
+  height: 50px;
+}
+
+.id-column td {
+  border-right: 1px solid #ccc;
+  text-align: center; 
+}
+
+.image-column,
+.name-column,
+.description-column,
+.category-column {
+  border-right: 1px solid #ccc;
+}
+
+.category-column {
+  border-right: none;
+}
+
+.action-column {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit-button,
+.delete-button {
+  background-color: #fbe1d7;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.add-container{
+  display: flex;
+  flex-direction: row-reverse;
+  
+}
+
+.btn-agregar{
+  padding-right: 10px;
+  margin-right: 20px;
+}

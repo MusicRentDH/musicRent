@@ -3,10 +3,9 @@
   width: 10vh;
 }
 
-.body-container {
-    
+.body-container {    
     width: 100%;
-    
+    height: 28vh;    
     background-image: url(../../../../../imagen/BarraBusquedaHome/fondo_home.svg);
     background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -35,6 +34,7 @@
     padding: 0.7rem;
     border-radius: 50px;
     border: none;
+    height: 1.2rem
   }
 
   .search-button-styles {
@@ -43,10 +43,13 @@
     padding: 0.7rem 1.5rem ;
     border-radius: 50px;
     cursor: pointer;
+    font-size: 1rem;
+    
   }
   
   .image-styles {
-    width: 100%;
+    width: 100;
+    height: 31vh;
     bottom: 0;    
     
   }

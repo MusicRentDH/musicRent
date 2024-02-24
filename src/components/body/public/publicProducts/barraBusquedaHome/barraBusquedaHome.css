@@ -50,9 +50,46 @@
   .image-styles {
     width: 100;
     height: 31vh;
-    bottom: 0;    
-    
+    bottom: 0;       
   }
 
+  @media only screen and (max-width: 480px) {
+    .div{
+      width: 10vw;
+    }
 
+    .body-container {    
+      width: 100%;
+      height: 20vh;          
+    }
+    
+    .h2-styles {
+      color: #000000; /* Color negro */
+      margin-left: 2rem;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .search-bar-container {  
+      align-items: center;
+      margin-left: 2rem;  
+    }
+    
+    .search-input-styles { 
+    margin-top: 1rem; 
+    width: 50vw;
+    height: 0.3rem
+    }
   
+    .search-button-styles {      
+      margin-top: 1rem; 
+      font-size: 0.5rem;
+      border: none;
+      align-content: center;      
+    }
+    
+    .image-styles {
+      width: 100%;
+      height: 30vh;   
+    }
+  }

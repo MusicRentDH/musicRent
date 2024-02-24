@@ -1,0 +1,43 @@
+.div{
+  width: 10vh;
+}
+
+.categorias-container {
+  
+  position: relative;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center;    
+    margin-top: 20px; /* Ajusta según sea necesario */
+  }
+  
+  h2 {
+    margin-left: 4rem;
+    margin-bottom: 20px; /* Espaciado entre el h2 y las categorías */
+  }
+  
+  .categoria-button {
+    margin-right: 20px;
+    width: 30%;
+    height: 99px;
+    background-color: #EFF0F2;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  h3{
+    margin-right: 4rem;
+    text-align: right;    
+  }
+  

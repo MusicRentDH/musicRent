@@ -1,0 +1,118 @@
+.containerp {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para apilar elementos */
+    align-items: center; /* Centra los elementos horizontalmente */
+  }
+  
+  .containeriz {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Ocupa todo el ancho del contenedor principal */
+  }
+  
+  .containernombrep {
+    font-family: "poppins";
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Ocupa todo el ancho del contenedor principal */
+    justify-content: space-between; /* Espaciamiento entre las cajas de texto y botones */
+    display: flex; /* Crea una fila con los dos campos y botón */
+  }
+
+  ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 9px 18px;
+    text-decoration: none;
+}
+
+
+ul.pagination li a.active:hover {background-color: #397f3b;}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+    .containerimagen {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between; /* Alinea los elementos con espacio entre ellos */
+        flex: 0 0 calc(50% - 10px); /* Calcula el 50% del ancho del contenedor y resta el margen */
+  }
+
+  
+  .containerig{
+    font-family: "poppins";
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 6px 6px 10px 0px gray;
+    width: 100%; /* Ocupa todo el ancho del contenedor principal */
+    box-sizing: border-box;
+  }
+
+  .containerip {
+    font-family: "poppins";
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%; /* Ocupa todo el ancho del contenedor principal */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea dos columnas de igual ancho */
+    grid-gap: 20px; /* Añade espacio entre los elementos */
+  }
+
+  .imguno, .imgdos, .imgtres, .imgcuatro, .imgprincipal{
+    flex: 1 1 auto;
+    font-family: "poppins";
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 6px 6px 10px 0px gray;
+    box-sizing: border-box;
+    width: 100%;
+   }
+
+  .imguno img,.imgdos img, .imgtres img, .imgcuatro img, .imgprincipal img{
+    max-width: 100%; /* Hace que la imagen se ajuste al 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    object-fit: cover; /* Ajusta la imagen manteniendo sus proporciones y cubriendo completamente el contenedor */
+   }
+  
+  .containerder {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%; /* Ocupa todo el ancho del contenedor principal */
+  }
+
+  p{
+    font-family: "poppins";;
+  }
+  
+  .containerboton {
+    text-align: center;
+    
+  }
+  
+  .reservarBtn {
+    font-family: "poppins";
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    border: 2px solid #FDA310;
+    font-size: 20px;
+    background-color: #FDA310;
+    color: #ffffff;
+    border-radius: 20px;
+  }
+
+  #gallery-section{
+    width: 80%;
+    align-self: center;
+    margin: 0 auto;
+  }

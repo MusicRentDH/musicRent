@@ -1,13 +1,15 @@
-// AdminProducts.jsx
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import { useApi } from "../../../../context/ApiContext";
 import editIcon from '../../../../assets/Admin/Admin_Tablas/botonEditar.svg';
 import trashIcon from '../../../../assets/Admin/Admin_Tablas/botonEliminar.svg';
+import { ImPlus } from "react-icons/im";
+import { Link } from "react-router-dom"; 
 import './AdminProducts.css';
+import { IoChevronBack } from "react-icons/io5";
 
 const AdminProducts = () => {
-  const { productos, loading, error, deleteProduct } = useApi();
+  const { productos, loading, error, deleteProduct, createProduct } = useApi();
   const [confirmDelete, setConfirmDelete] = useState(null);
 
   const handleDeleteClick = (id, name, images) => {
@@ -32,7 +34,7 @@ const AdminProducts = () => {
     </div>
   );
 
-  const columnas = [
+  const columns = [
     {
       name: 'Imagen',
       selector: (row) => row.images[0].imageData,
@@ -76,38 +78,51 @@ const AdminProducts = () => {
 
   return (
     <div>
-      <h1>Lista productos</h1>
+      <h1 className="text-admin-products">Administra, crea y elimina instrumentos musicales</h1>
+
+      <div className="contenedor-botones">
+        <Link to="/admin" className="link-boton">
+          <button className="add-button">
+            <p><IoChevronBack style={{ margin: '0 6px' }}/></p>
+            <p>Regresar</p>
+          </button>
+        </Link>
+        <Link to="/admin/Administrar-Productos/crear-producto" className="link-boton">
+          <button className="add-button">
+            <p><ImPlus style={{ margin: '0 6px' }}/></p>
+            <p>Agregar Instrumento</p>
+          </button>
+        </Link>
+      </div>
       {loading && <p>Cargando productos...</p>}
       {error && <p>Error al cargar productos: {error}</p>}
-      {!loading && !error && (
-        <>
-          <DataTable
-            columns={columnas}
-            data={productos}
-            selectableRows
-            fixedHeader
-            striped
-            pagination
-          />
-          {confirmDelete && (
-            <div className="modal-overlay">
-              <div className="modal">
-                <p>{`¿Deseas eliminar el producto con ID ${confirmDelete.id} (${confirmDelete.name})?`}</p>
-                <div className="modal-content">
-                  <img
-                    src={`data:image/jpeg;base64,${confirmDelete.images[0].imageData}`}
-                    alt="Imagen del producto"
-                    style={{ width: '50px', marginRight: '15px' }}
-                  />
-                  <div className="modal-buttons">
-                    <button onClick={handleConfirmDelete}>Sí</button>
-                    <button onClick={() => setConfirmDelete(null)}>No</button>
-                  </div>
-                </div>
+
+      <DataTable
+        columns={columns}
+        data={productos}
+        selectableRows
+        fixedHeader
+        striped
+        pagination
+      />
+
+      {confirmDelete && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <p>{`¿Deseas eliminar el producto con ID ${confirmDelete.id} (${confirmDelete.name})?`}</p>
+            <div className="modal-content">
+              <img
+                src={`data:image/jpeg;base64,${confirmDelete.images[0].imageData}`}
+                alt="Imagen del producto"
+                style={{ width: '50px', marginRight: '15px' }}
+              />
+              <div className="modal-buttons">
+                <button onClick={handleConfirmDelete}>Sí</button>
+                <button onClick={() => setConfirmDelete(null)}>No</button>
               </div>
             </div>
-          )}
-        </>
+          </div>
+        </div>
       )}
     </div>
   );

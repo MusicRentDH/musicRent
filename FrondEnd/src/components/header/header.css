@@ -1,39 +1,43 @@
-/* header.css */
+.div{
+  width: 10vh;
+}
 
 .pagina_principal-header {
   background-color: #ffffff; /* Fondo blanco */
-  height: 100px; /* Altura 100px */
-  width: 100%; /* Ancho 100% de la pantalla */
+  height: 10vh; /* Altura 100px */
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;  
-  padding: 0 20px; /* Añadido un padding de 20px a cada lado para separar los elementos del borde */
+  margin-left: 4rem;   
 }
 
 .pagina_principal-header img {
   max-width: 100%;
-  height: auto;
-  margin-left: 4rem;  
+  height: auto;   
+  margin-left: 4rem;
 }
 
 .lema {
   position: absolute;    
   font-family: Arial, sans-serif; /* Tipo de letra */
-  font-size: 15px; /* Tamaño de letra */
   font-weight: normal; /* No en negrilla */
-  margin-left: 4rem;
 }
 
 .pagina_principal-header div {
   display: flex;
-  gap: 20px; /* Espaciado de 40px entre los botones */
-  margin-right: 40px; /* Margen derecho de 40px para los botones */
+  gap: 2rem; /* Espaciado de 40px entre los botones */
+  margin-right: 4vh; /* Margen derecho de 40px para los botones */
 }
 
 .crear-cuenta-button {
-  width: 150px; /* Ancho 100px */
-  height: 49px; /* Altura 49px */
+  background-color: #000000; /* Color del botón de crear cuenta */
+  color: #ffffff; /* Texto blanco */
+  border: none;
+  width: 10rem; /* Ancho 100px */
+  height: 3.5rem; /* Altura 49px */
   cursor: pointer;
+  font-size: 1rem;
   border-radius: 25px; /* Radio 25px para hacer los botones redondeados */
 }
 
@@ -43,14 +47,11 @@
   background-color: #fda310; /* Color del botón de iniciar sesión */
   color: #ffffff; /* Texto blanco */
   border: none;
-  width: 180px; /* Ancho 100px */
-  height: 49px; /* Altura 49px */
+  width: 14rem; /* Ancho 100px */
+  height: 3.5rem; /* Altura 49px */
   cursor: pointer;
+  font-size: 1rem;
   border-radius: 25px; /* Radio 25px para hacer los botones redondeados */
-}
-
-.login-button img {
-  align-content: center;  
 }
 
 .identificacion {  
@@ -68,8 +69,57 @@
   margin-left: 4rem;  
 }
 
-.crear-cuenta-button {
-  background-color: #000000; /* Color del botón de crear cuenta */
-  color: #ffffff; /* Texto blanco */
-  border: none;
+@media only screen and (max-width: 480px) {
+  .div{
+    width: 10;
+  }
+  .pagina_principal-header {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;      
+  }
+  
+  .lema{
+    margin-left: 0;
+    position: absolute;    
+  }
+
+  .identificacion h2 {
+    position: absolute;
+    font-size: 0.5rem;
+    margin-top: 2.5rem;
+    margin-left: 0;  
+  }
+  
+  .pagina_principal-header img {
+    margin-left: 0; /* Eliminar el margen izquierdo */    
+    width: 20vh;
+  }
+  
+  .login-button{
+    width: 6rem;
+    height: 4vh;
+    font-size: 0.5rem;
+    text-align: center;
+  }
+
+  .login-button img{
+    width: auto;
+    height: 2vh;
+    text-align: center;
+  }
+
+  .crear-cuenta-button{
+    width: 6rem;
+    height: 4vh;
+    font-size: 0.5rem;
+    text-align: center;  
+    margin-right: -1rem;  
+  }
+
+  .pagina_principal-header div{
+    gap: 0.5rem;
+  }
 }
+  

@@ -1,3 +1,5 @@
+// ApiContext.js
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ApiContext = createContext();
@@ -46,8 +48,26 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const createProduct = async (productData) => {
+    try {
+      const response = await fetch('http://localhost:8081/api/admin/products', {
+        method: 'POST',
+        body: productData,
+      });
+
+      if (response.ok) {
+        const newProduct = await response.json();
+        setProductos((prevProductos) => [...prevProductos, newProduct]);
+      } else {
+        setError('Error creating product');
+      }
+    } catch (error) {
+      setError('Error creating product');
+    }
+  };
+
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct }}>
       {children}
     </ApiContext.Provider>
   );

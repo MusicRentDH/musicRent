@@ -1,7 +1,8 @@
 import React from 'react';
 import './header.css';
-import logo from '../../../src/assets/Header/logo.svg'
-import icono_login from '../../../src/assets/Header/icono_login.svg'
+import logo from '../../assets/Header/logo.svg'
+import icono_login from '../../assets/Header/icono_login.svg'
+import  { Link } from "react-router-dom"
 
 
 
@@ -9,8 +10,9 @@ const Header = () => {
   return (
     <div className='pagina_principal-header'>
       <div className='identificacion'>
-      <img className='logo'src={logo} alt="logo" />
-      
+      <Link to="/">
+          <img className='logo' src={logo} alt="logo" />
+        </Link>
       
         
         <h2 className='Lema'>Encuentra tu nota perfecta con un solo clic</h2>

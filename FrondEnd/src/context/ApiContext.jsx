@@ -66,8 +66,24 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const fetchProductById = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/products/${id}`);
+      if (response.ok) {
+        const product = await response.json();
+        return product;
+      } else {
+        setError('Error fetching product by ID');
+        return null;
+      }
+    } catch (error) {
+      setError('Error fetching product by ID');
+      return null;
+    }
+  };
+
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById }}>
       {children}
     </ApiContext.Provider>
   );

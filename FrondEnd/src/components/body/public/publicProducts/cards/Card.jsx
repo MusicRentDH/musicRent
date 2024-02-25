@@ -1,9 +1,12 @@
+// Card.js
+
 import React, { useState, useEffect } from 'react';
 import { useApi } from '../../../../../context/ApiContext';
+import { Link } from 'react-router-dom';
 import './card.css';
 
 const Card = () => {
-  const { productos } = useApi();
+  const { productos, fetchProductById } = useApi();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -11,7 +14,6 @@ const Card = () => {
     setCurrentIndex(randomIndex);
   }, [productos]);
 
-  // Asegurarse de que haya al menos 10 elementos disponibles para mostrar
   const productsToDisplay = productos.length >= 10 ? productos.slice(currentIndex, currentIndex + 10) : [];
 
   return (
@@ -22,12 +24,14 @@ const Card = () => {
         {productsToDisplay.map((producto, index) => (
           <div key={`${producto.id}-${index}`} className='producto-card'>
             <div className='imagen-container'>
-              <div className='imagen-wrapper'>
-                <img
-                  src={`data:image/jpeg;base64,${producto.images[0].imageData}`}
-                  alt={`${producto.name}-imagen-${index}`}
-                />
-              </div>
+              <Link to={`/detalle-producto/${producto.id}`}>
+                <div className='imagen-wrapper'>
+                  <img
+                    src={`data:image/jpeg;base64,${producto.images[0].imageData}`}
+                    alt={`${producto.name}-imagen-${index}`}
+                  />
+                </div>
+              </Link>
             </div>
             <div className='informacion'>
               <h3 className='producto'>{producto.name}</h3>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LogoPrincipal from '../../assets/Header/logo.svg';
 import { CiLogin } from 'react-icons/ci';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +14,9 @@ const Header = () => {
   return (
     <div className={`container-header ${menuOpen ? 'menu-open' : ''}`}>
       <div className='encabezado-logo'>
-        <img className='logo-header' src={LogoPrincipal} alt='' />
+        <Link to='/'>
+          <img className='logo-header' src={LogoPrincipal} alt='' />  
+        </Link>        
         <p className='logo-text'>Encuentra tu nota perfecta con un solo clic</p>
       </div>
       <div className='contenedor-botones'>

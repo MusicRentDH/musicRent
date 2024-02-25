@@ -91,12 +91,12 @@ form button:hover {
   z-index: 1000;
 }
 
-.modal {
+.modal-2 {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;  
+  text-align: center;   
 }
 .icon-feliz{
   margin-top: 50px;
@@ -111,9 +111,17 @@ form button:hover {
   border-radius: 20px;
   margin-top: 50px;
   font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.309);
+  color: white;
 }
 .botones-form{
   display: flex;
   justify-content:space-around;  
   width: 680px;
+  cursor: pointer;
+}
+.cerrar-modal:hover {
+  background-color: rgba(0, 0, 0, 0.205);
 }

@@ -7,7 +7,7 @@ import { ImPlus } from "react-icons/im";
 import { Link } from "react-router-dom"; 
 import './AdminProducts.css';
 import { IoChevronBack } from "react-icons/io5";
-
+import ImgTrash from "../../../../assets/Admin/Admin_Tablas/trash.png";
 const AdminProducts = () => {
   const { productos, loading, error, deleteProduct, createProduct } = useApi();
   const [confirmDelete, setConfirmDelete] = useState(null);
@@ -56,15 +56,11 @@ const AdminProducts = () => {
       sortable: true,
     },
     {
-      name: "Nombre del producto",
+      name: "Nombre del Instrumento",
       selector: (row) => row.name,
       sortable: true,
     },
-    {
-      name: "Descripción",
-      selector: (row) => row.description,
-      sortable: true,
-    },
+    
     {
       name: "Categoría",
       selector: (row) => row.categoryName,
@@ -109,16 +105,12 @@ const AdminProducts = () => {
       {confirmDelete && (
         <div className="modal-overlay">
           <div className="modal">
-            <p>{`¿Deseas eliminar el producto con ID ${confirmDelete.id} (${confirmDelete.name})?`}</p>
-            <div className="modal-content">
-              <img
-                src={`data:image/jpeg;base64,${confirmDelete.images[0].imageData}`}
-                alt="Imagen del producto"
-                style={{ width: '50px', marginRight: '15px' }}
-              />
+            <img className="img-modal" src={ImgTrash} alt="" />
+            <p className="text-modal" >{`¿Estas seguro que deseas eliminar el intrumento "${confirmDelete.name}?"`}</p>
+            <div className="modal-content">              
               <div className="modal-buttons">
-                <button onClick={handleConfirmDelete}>Sí</button>
-                <button onClick={() => setConfirmDelete(null)}>No</button>
+                <button className="izq" onClick={handleConfirmDelete}>Eliminar</button>
+                <button className="der" onClick={() => setConfirmDelete(null)}>Cancelar</button>
               </div>
             </div>
           </div>

@@ -185,7 +185,7 @@ const CrearProducto = () => {
 
       {showModal && (
         <div className="modal-container">
-          <div className="modal">
+          <div className="modal-2">
             <div style={{ textAlign: 'center' }}>
               <img className='icon-feliz' src={feliz} alt="icono" />
               <p className='text-modal'><strong>¡Felicidades!</strong></p>

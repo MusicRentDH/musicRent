@@ -1,0 +1,106 @@
+/* AdminProducts.css */
+
+.add-button {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #FDA310;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; 
+  border-radius: 20px;
+  width: 187px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  margin-left: 30px;
+  margin-right: 30px;  
+}
+.contenedor-botones{
+  display: flex;
+  justify-content:space-between;
+}
+.link-boton{
+  text-decoration: none;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 20px;
+}
+
+.image-column img {
+  max-width: 50px;
+  height: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 676px;
+  height: 475px;
+  overflow-y: auto;
+  z-index: 1000;
+  position: fixed;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.modal-buttons button {
+  margin: 0 10px;
+  padding: 8px 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-buttons button:hover {
+  background-color: #2980b9;
+}
+
+.text-admin-products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}

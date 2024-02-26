@@ -3,7 +3,7 @@
 }
 
 .container-detalles-fotos{
-    background-color: blueviolet;
+    
     display: flex;
     justify-content: space-between;
     
@@ -12,14 +12,13 @@
     height: 554px;
 }
 .container-detalle-izquierda{
-    background-color: #E54E13;
-   
+      
     padding: 20px;
     box-sizing: border-box;
     width: 90%; /* Ocupa todo el ancho del contenedor principal */
 }
 .container-detalle-derecha {
-    background-color: aqua;
+    
     width: 975px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -28,7 +27,7 @@
 }
 
 .img-1{
-    background-color: chartreuse;
+    
     margin-top: 40px;
     margin: 20px 20px;
     width: 90%;
@@ -37,7 +36,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 }
 .img-2, .img-3, .img-4, .img-5 { 
-    background-color: chocolate;   
+      
     padding: 10px;
     width: 90%;
     flex: 1 1 auto;
@@ -50,13 +49,11 @@
     padding: 10px; /* Añade relleno opcional para espacio interno */
 }
 .text-detalle-name{
-    background-color: blue;
+    
     font-family: 'Monserrat';
     font-size: 30px;
     margin-left: 65px;
     font-weight: bold;
-    border-radius: 10px; /* Puedes ajustar el valor según sea necesario */
-    border: 2px solid #000; /* Añade un borde opcional */
     padding: 10px;
 }
 
@@ -139,7 +136,3 @@ ul.pagination li a:hover:not(.active) {background-color: #ddd;}
     justify-content: space-between;
 }
 
-
-
-  
- 

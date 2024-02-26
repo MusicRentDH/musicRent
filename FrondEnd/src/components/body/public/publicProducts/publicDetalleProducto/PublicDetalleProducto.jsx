@@ -3,11 +3,22 @@ import { useParams } from 'react-router-dom';
 import { useApi } from '../../../../../context/ApiContext';
 import './PublicDetalleProducto.css';
 import { GrGallery } from "react-icons/gr"; 
+import AllGalleryByProduct from './allGalleryByProduct/allGalleryByProduct/AllGalleryByProduct';
 
 const PublicDetalleProducto = () => {
   const { id } = useParams();
   const { fetchProductById } = useApi();
   const [product, setProduct] = useState(null);
+
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
+  const openGallery = () => {
+      setIsGalleryOpen(true);
+  };
+
+  const closeGallery = () => {
+      setIsGalleryOpen(false);
+  };
 
   useEffect(() => {
     const getProductDetails = async () => {
@@ -76,7 +87,7 @@ const PublicDetalleProducto = () => {
           </p>
           <div className='contenedor-galeria'>
           <GrGallery />
-          <p>Ver mas</p>
+          <a href="#" onClick={openGallery}>Ver más</a>
           </div>
         </div>
           <p className='description-detalle' >Descripción: {product.description}</p>
@@ -84,6 +95,7 @@ const PublicDetalleProducto = () => {
       ) : (
         <p>Cargando detalles del producto...</p>
       )}
+      {isGalleryOpen && <AllGalleryByProduct onClose={closeGallery} />}
     </div>
   );
 };

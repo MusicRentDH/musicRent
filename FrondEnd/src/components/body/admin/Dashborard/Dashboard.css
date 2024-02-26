@@ -1,0 +1,40 @@
+.center-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 170px;    
+}
+
+.main-section{
+    margin: 0px auto;
+}
+
+.right-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+}
+
+.btn-dashboard{
+    border-radius: 30px;
+    height: 50px;
+    font-size: 18px;
+    width: 230px;
+    background-color: black;
+    color: aliceblue;
+    border-style: none;
+    margin-top: 50px;
+    margin-left: 100px;
+    
+}
+
+.btn-dashboard:hover{
+    cursor: pointer;
+}
+
+section div{
+    display: flex;
+    justify-content: center ;
+    margin-top: 13px;
+}

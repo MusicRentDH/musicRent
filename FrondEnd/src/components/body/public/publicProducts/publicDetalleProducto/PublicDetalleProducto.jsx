@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useApi } from '../../../../../context/ApiContext';
-import './PublicDetalleProducto.css';  // Ajusta la ruta según tu estructura de archivos
+import './PublicDetalleProducto.css';
+import { GrGallery } from "react-icons/gr"; 
 
 const PublicDetalleProducto = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const PublicDetalleProducto = () => {
     <div>
       {product ? (
         <div>
-          <h2>{product.name}</h2>
+          <p className='text-detalle-name'>{product.name}</p>
           <div className="container-detalles-fotos">
             <div className='container-detalle-izquierda'>
               {/* Renderizar la primera imagen en el div con la clase img-1 */}
@@ -68,8 +69,17 @@ const PublicDetalleProducto = () => {
               )}
             </div>
           </div>
-          <p>Precio: ${product.price}</p>
-          <p>Descripción: {product.detail}</p>
+          <div className='contenedor-galeria-precio'>
+          <p className='precio-detalle'>
+          Precio: ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+          <span className='spam-precio'> por día</span>
+          </p>
+          <div className='contenedor-galeria'>
+          <GrGallery />
+          <p>Ver mas</p>
+          </div>
+        </div>
+          <p className='description-detalle' >Descripción: {product.description}</p>
         </div>
       ) : (
         <p>Cargando detalles del producto...</p>

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     
-    margin-left: 65px;
+    margin-left: 150px;
     margin-right: 65px;
     height: 554px;
 }
@@ -29,6 +29,35 @@
     padding: 20px;
     width: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+.text-detalle-name{
+    font-size: 35px;
+    margin-left: 65px;
+    font-weight: bold;
+}
+.precio-detalle{
+    color: #E54E13;
+    font-size: 33px;
+    margin-left: 65px;
+}
+.spam-precio{
+    font-size: 23px;
+}
+.description-detalle{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 65px;
+    margin-right: 65px;
+    font-size: 24px;    
+}
+.contenedor-galeria{
+    display: flex;
+    margin-right: 200px;
+    font-size: 24px;
+}
+.contenedor-galeria-precio{
+    display: flex;
+    justify-content: space-between;
 }
 
 

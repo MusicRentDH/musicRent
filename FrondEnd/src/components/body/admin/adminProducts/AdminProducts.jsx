@@ -25,9 +25,7 @@ const AdminProducts = () => {
 
   const CustomActionsCell = ({ id, name, images }) => (
     <div>
-      <button className="icon-button edit">
-        <img src={editIcon} alt="Editar" />
-      </button>
+      
       <button className="icon-button eliminate" onClick={() => handleDeleteClick(id, name, images)}>
         <img src={trashIcon} alt="Eliminar" />
       </button>
@@ -35,7 +33,7 @@ const AdminProducts = () => {
   );
 
   const columns = [
-    {
+    /*{
       name: 'Imagen',
       selector: (row) => row.images[0].imageData,
       cell: ({ images }) => (
@@ -49,7 +47,7 @@ const AdminProducts = () => {
           )}
         </div>
       ),
-    },
+    },*/
     {
       name: "ID",
       selector: (row) => row.id,
@@ -61,11 +59,11 @@ const AdminProducts = () => {
       sortable: true,
     },
     
-    {
+    /*{
       name: "Categoría",
       selector: (row) => row.categoryName,
       sortable: true,
-    },
+    },*/
     {
       name: 'Acción',
       cell: CustomActionsCell,

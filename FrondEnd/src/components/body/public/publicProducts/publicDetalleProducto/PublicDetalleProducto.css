@@ -1,0 +1,37 @@
+.container-detalles-fotos{
+    display: flex;
+    justify-content: space-between;
+    
+    margin-left: 65px;
+    margin-right: 65px;
+    height: 554px;
+}
+.container-detalle-izquierda{
+    
+    width: 800px;
+}
+.container-detalle-derecha {
+    width: 975px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 10px;
+}
+
+.img-1{
+    margin-top: 40px;
+    width: 80%;
+    height: 80%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+.img-2, .img-3, .img-4, .img-5 {    
+    padding: 20px;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
+
+
+  
+ 

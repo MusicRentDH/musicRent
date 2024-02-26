@@ -28,10 +28,10 @@ const Header = () => {
         </button>
         
         <button className='button-header-login'>
-          <p>
+          <p className='clogin'>
             <CiLogin className='icon-login' />
           </p>
-          <p>Iniciar Sesion</p>
+          <p className='boton-text-loguin'>Iniciar Sesion</p>
         </button>
         <button className='button-header-close'>Cerrar Sesion</button>
       </div>

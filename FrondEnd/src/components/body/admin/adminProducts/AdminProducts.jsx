@@ -71,7 +71,7 @@ const AdminProducts = () => {
   ];
 
   return (
-    <div>
+    <div className="table-container">
       <h1 className="text-admin-products">Administra, crea y elimina instrumentos musicales</h1>
 
       <div className="contenedor-botones">

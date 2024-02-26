@@ -1,4 +1,9 @@
+.container_principal_detalle{
+    margin-top: 120px;
+}
+
 .container-detalles-fotos{
+    background-color: blueviolet;
     display: flex;
     justify-content: space-between;
     
@@ -7,10 +12,14 @@
     height: 554px;
 }
 .container-detalle-izquierda{
-    
-    width: 800px;
+    background-color: #E54E13;
+   
+    padding: 20px;
+    box-sizing: border-box;
+    width: 90%; /* Ocupa todo el ancho del contenedor principal */
 }
 .container-detalle-derecha {
+    background-color: aqua;
     width: 975px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -19,27 +28,89 @@
 }
 
 .img-1{
+    background-color: chartreuse;
     margin-top: 40px;
-    width: 80%;
-    height: 80%;
+    margin: 20px 20px;
+    width: 90%;
+    height: 90%;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
 }
-.img-2, .img-3, .img-4, .img-5 {    
-    padding: 20px;
-    width: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+.img-2, .img-3, .img-4, .img-5 { 
+    background-color: chocolate;   
+    padding: 10px;
+    width: 90%;
+    flex: 1 1 auto;
+    font-family: "poppins";
+    margin: 10px 10px;
+    box-shadow: 6px 6px 10px 0px gray;
+    box-sizing: border-box;
+    border-radius: 10px; /* Puedes ajustar el valor según sea necesario */
+    border: 2px solid #000; /* Añade un borde opcional */
+    padding: 10px; /* Añade relleno opcional para espacio interno */
 }
 .text-detalle-name{
-    font-size: 35px;
+    background-color: blue;
+    font-family: 'Monserrat';
+    font-size: 30px;
     margin-left: 65px;
     font-weight: bold;
+    border-radius: 10px; /* Puedes ajustar el valor según sea necesario */
+    border: 2px solid #000; /* Añade un borde opcional */
+    padding: 10px;
 }
+
+.batras{
+    font-family: 'Monserrat';
+    font-size: 30px;
+    margin-left: 65px;
+    font-weight: bold;
+    border-radius: 10px; /* Puedes ajustar el valor según sea necesario */
+    border: 2px solid #000; /* Añade un borde opcional */
+    padding: 10px; /* Añade relleno opcional para espacio interno */
+}
+
+.name-atras{
+    justify-content: space-between;
+}
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 9px 18px;
+    text-decoration: none;
+}
+
+ul.pagination li a.active:hover {background-color: #397f3b;}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+
 .precio-detalle{
     color: #E54E13;
     font-size: 33px;
     margin-left: 65px;
 }
+
+
+
+  @media (max-width: 768px) {
+    .responsive-container {
+      flex-direction: column;
+    }
+  
+    .text-detalle-name {
+      margin-right: 0; /* Elimina el margen en dispositivos más pequeños */
+    }
+  }
+
 .spam-precio{
     font-size: 23px;
 }
@@ -49,6 +120,14 @@
     margin-left: 65px;
     margin-right: 65px;
     font-size: 24px;    
+}
+
+.descriptio-texto{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 65px;
+    margin-right: 65px;
+    font-size: 24px; 
 }
 .contenedor-galeria{
     display: flex;

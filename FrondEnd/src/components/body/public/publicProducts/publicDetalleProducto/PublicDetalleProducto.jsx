@@ -4,6 +4,7 @@ import { useApi } from '../../../../../context/ApiContext';
 import './PublicDetalleProducto.css';
 import { GrGallery } from "react-icons/gr"; 
 import AllGalleryByProduct from './allGalleryByProduct/allGalleryByProduct/AllGalleryByProduct';
+import { Link } from 'react-router-dom';
 
 const PublicDetalleProducto = () => {
   const { id } = useParams();
@@ -30,10 +31,15 @@ const PublicDetalleProducto = () => {
   }, [id, fetchProductById]);
 
   return (
-    <div>
+    <div  className='container_principal_detalle'>
       {product ? (
         <div>
+          <div className='name-atras'>
           <p className='text-detalle-name'>{product.name}</p>
+            <p className="pagination">
+              <Link to="/"><spam>« Atras </spam></Link>
+            </p>
+            </div>
           <div className="container-detalles-fotos">
             <div className='container-detalle-izquierda'>
               {/* Renderizar la primera imagen en el div con la clase img-1 */}
@@ -61,6 +67,7 @@ const PublicDetalleProducto = () => {
                   alt={`${product.name}-image-2`}
                   className="img-3"
                 />
+                
               )}
               {/* Renderizar solo la cuarta imagen en el div con la clase img-4 */}
               {product.images && product.images.length > 3 && (
@@ -87,10 +94,11 @@ const PublicDetalleProducto = () => {
           </p>
           <div className='contenedor-galeria'>
           <GrGallery />
-          <a href="#" onClick={openGallery}>Ver más</a>
+          <a href="#" onClick={openGallery}style={{ color: '#000000', fontWeight: 'bold', marginLeft: '10px', fontFamily: 'Monserrat' }}>Ver más</a>
           </div>
         </div>
-          <p className='description-detalle' >Descripción: {product.description}</p>
+          <p className='description-detalle' >Descripción:</p>
+          <p className='descriptio-texto'>{product.description}</p>
         </div>
       ) : (
         <p>Cargando detalles del producto...</p>

@@ -98,7 +98,7 @@ const CrearProducto = () => {
   };
 
   return (
-    <div>
+    <div className='container_crear_producto'>
       <div className="form-container">
         <div className="form-title">
           <h2>

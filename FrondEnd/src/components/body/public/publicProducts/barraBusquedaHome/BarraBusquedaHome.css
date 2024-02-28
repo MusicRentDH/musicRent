@@ -7,7 +7,6 @@
   background-image: url('../../../../../assets/BarraBusquedaHome/fondo_home.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 120px;
 }
 
 .container-izquierdo {
@@ -17,6 +16,11 @@
   flex-direction: column;
   height: 120px;
   justify-content: space-evenly;
+}
+
+p.text-barra {  
+  margin-inline: 0;  
+  margin: 0;    
 }
 
 .container-derecho {

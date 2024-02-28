@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import LogoPrincipal from '../../assets/Header/logo.svg';
-import { CiLogin } from 'react-icons/ci';
 import './Header.css';
 import { Link } from 'react-router-dom';
 

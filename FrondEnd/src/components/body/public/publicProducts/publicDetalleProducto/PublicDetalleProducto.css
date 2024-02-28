@@ -1,24 +1,107 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
+    padding: 0;  
+}
 .container_principal_detalle{
-    margin-top: 120px;
+    margin-top: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* sección general de la pagina Detalle del producto*/
+.name-atras{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
+    .name-atras {
+      flex-direction: row; /* Puedes ajustar esto según tus necesidades */
+      /*flex-direction:column-reverse;*/
+    }
+  }
+/*hijo de .name-atras*/
+.text-detalle-name {
+    font-family: 'poppins';
+    font-size: calc(1em + 1vw);
+    color:black;
+    font-weight: bold;
+    margin-left: 0px;
+    margin-right: 0;
+    width: 100%;
+}
+
+/*hijo de .name-atras*/
+.pagination {
+    margin-right: 2px;
+    font-family: 'Poppins';
+    font-size: calc(1em + 1vw);
+    text-align: right;
+    align-items: right;
+    width: 100%;
 }
 
 .container-detalles-fotos{
-    
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    
-    margin-left: 150px;
-    margin-right: 65px;
-    height: 554px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
 }
+
+@media (max-width: 576px) {
+    .container-detalles-fotos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0;
+    }
+  }
+
 .container-detalle-izquierda{
-      
+    display:flex;
     padding: 20px;
     box-sizing: border-box;
-    width: 90%; /* Ocupa todo el ancho del contenedor principal */
+    width: 90%;/* Ocupa todo el ancho del contenedor principal */
+    height: auto; /* Alto relativo*/
 }
+
+/*@media (max-width: 576px) {
+    .container-detalle-izquierda {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding: 0;
+        width: 90%;
+        height:auto;
+    }
+  }*/
+
 .container-detalle-derecha {
-    
     width: 975px;
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -26,113 +109,175 @@
     gap: 10px;
 }
 
-.img-1{
-    
-    margin-top: 40px;
-    margin: 20px 20px;
-    width: 90%;
-    height: 90%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
-}
-.img-2, .img-3, .img-4, .img-5 { 
-      
-    padding: 10px;
-    width: 90%;
-    flex: 1 1 auto;
-    font-family: "poppins";
-    margin: 10px 10px;
-    box-shadow: 6px 6px 10px 0px gray;
-    box-sizing: border-box;
-    border-radius: 10px; /* Puedes ajustar el valor según sea necesario */
-    border: 2px solid #000; /* Añade un borde opcional */
-    padding: 10px; /* Añade relleno opcional para espacio interno */
-}
-.text-detalle-name{
-    
-    font-family: 'Monserrat';
-    font-size: 30px;
-    margin-left: 65px;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.batras{
-    font-family: 'Monserrat';
-    font-size: 30px;
-    margin-left: 65px;
-    font-weight: bold;
-    border-radius: 10px; /* Puedes ajustar el valor según sea necesario */
-    border: 2px solid #000; /* Añade un borde opcional */
-    padding: 10px; /* Añade relleno opcional para espacio interno */
-}
-
-.name-atras{
-    justify-content: space-between;
-}
-ul.pagination {
-    display: inline-block;
-    padding: 0;
-    margin: 0;
-}
-
-ul.pagination li {display: inline;}
-
-ul.pagination li a {
-    color: black;
-    float: left;
-    padding: 9px 18px;
-    text-decoration: none;
-}
-
-ul.pagination li a.active:hover {background-color: #397f3b;}
-
-ul.pagination li a:hover:not(.active) {background-color: #ddd;}
-
-
-.precio-detalle{
-    color: #E54E13;
-    font-size: 33px;
-    margin-left: 65px;
-}
-
-
-
-  @media (max-width: 768px) {
-    .responsive-container {
-      flex-direction: column;
-    }
-  
-    .text-detalle-name {
-      margin-right: 0; /* Elimina el margen en dispositivos más pequeños */
+@media (max-width: 576px) {
+    .container-detalle-derecha {
+        flex-direction: column;
     }
   }
 
-.spam-precio{
-    font-size: 23px;
-}
-.description-detalle{
-    margin-bottom: 20px;
+.img-1{
     margin-top: 20px;
-    margin-left: 65px;
-    margin-right: 65px;
-    font-size: 24px;    
+    margin: 20px 20px;
+    width: 80%;
+    height: 90%;
+    padding: 20px;
+    box-shadow: 6px 6px 10px 0px gray;
+    border-radius: 10px;
+    width: 50vmin;
 }
 
-.descriptio-texto{
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 65px;
-    margin-right: 65px;
-    font-size: 24px; 
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
+    .img-1 {
+        width: 100%;
+    }
+  }
+
+  /*@media (max-width: 576px) {
+    .img-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  }*/
+
+.img-2, .img-3, .img-4, .img-5 { 
+    border-radius: 10px; 
+    padding: 10px;
+    width: 80%;
+    flex: 2 2 auto;
+    font-family: "poppins";
+    margin: 10px 5px 10px 10px;
+    box-shadow: 6px 6px 10px 0px gray;
+    padding: 10px;
+    align-content: center; /* Añade relleno opcional para espacio interno */
 }
-.contenedor-galeria{
-    display: flex;
-    margin-right: 200px;
-    font-size: 24px;
-}
+
+/*@media (max-width: 576px) {
+    .img-2, .img-3, .img-4, .img-5 {
+        display: none;
+    }
+  }*/
+
+
+/*sección precio y galeria del ver más*/
 .contenedor-galeria-precio{
     display: flex;
-    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    position: relative;
 }
+
+/*hijo de seccion precio y galeria del ver más*/
+.precio-detalle{
+    color: #E54E13;
+    font-size: calc(1em + 1vw);
+    text-align: left;
+    line-height: normal;
+    flex: 2;
+    width: 100%;
+    margin-left: 0px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
+    .precio-detalle {
+        font-size: 0.9em;
+    }
+  }
+  @media (max-width: 576px) {
+    .precio-detalle {
+        font-size: 0.7em;
+    }
+  }
+
+/*hijo de seccion precio y galeria del ver más*/
+.spam-precio{
+    font-size: calc(0,5em + 0,5vw);
+    opacity: 0.9;
+    align-items: center;
+    text-align: left;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
+    .spam-precio {
+        font-size: 0.7em;
+    }
+  }
+
+/*hijo de seccion precio y galeria del ver más*/
+.contenedor-galeria{
+    
+    font-family: 'Poppins';
+    font-size: calc(1em + 1vw); 
+    text-align: right;
+    padding-right: 2%;
+    width: 100%;
+    align-items: right;
+    margin-right: 0px;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
+    .contenedor-galeria {
+        font-size: 0.9em;
+    }
+  }
+  @media (max-width: 576px) {
+    .contenedor-galeria {
+        font-size: 0.7em;
+    }
+  }
+
+/*sección descripción destalle principal*/
+.descripcion-detalle-principal{
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    justify-content: space-between;
+    align-content: center;
+    flex-direction: column;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .descripcion-detalle-principal {
+      flex-direction: column; /* Cambia a disposición de columna en pantallas más pequeñas */
+      align-items: center; /* Centra los elementos en pantallas más pequeñas */
+    }
+  }
+
+  /*hijo de descripción detalle principal*/
+.description-detalle{
+    display: flex;
+    text-align: left;
+    font-family: 'Poppins';
+    font-size: calc(1em + 1vw);
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/*hijo de descripción detalle principal*/
+.descriptio-texto{
+    display: flex;
+    font-size: calc(1em + 1vw);
+    font-family: 'Poppins';
+    text-align: justify;
+    position: relative; 
+    position: relative;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 

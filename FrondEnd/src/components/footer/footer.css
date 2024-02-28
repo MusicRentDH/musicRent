@@ -9,8 +9,22 @@
   display: flex;
   height: auto;
   text-align: justify;
+  margin-top: auto;
 }
 
+/*@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; /* Ajusta la altura según tus necesidades */
+    /*margin-bottom: 0; /* Elimina cualquier espacio debajo del contenedor */
+ /* }*/
+/*}*/
+
+p {
+  margin:0;
+  padding: 0;
+}
 .container {
   max-width: 100%;
   margin: 20, auto;

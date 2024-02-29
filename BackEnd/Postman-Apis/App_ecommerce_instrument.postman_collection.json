@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "59f1226b-657a-4220-8c2c-bcc7757c38cf",
+		"name": "App_ecommerce_instrument",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26815119",
+		"_collection_link": "https://solar-firefly-89981.postman.co/workspace/Platzi~26f4b958-f8f5-422a-bf6e-4736ad785942/collection/26815119-59f1226b-657a-4220-8c2c-bcc7757c38cf?action=share&source=collection_link&creator=26815119"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Crear_Usuarios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"brahamzapata1991@gmail.com\",\r\n    \"password\": \"1023917854\",\r\n    \"name\": \"braham zapata Escarraga\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/sign-up"
+					},
+					"response": []
+				},
+				{
+					"name": "Inicio_Sesion",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "jwt",
+							"jwt": {
+								"addTokenTo": "header",
+								"isSecretBase64Encoded": false,
+								"algorithm": "HS256",
+								"payload": "{}",
+								"headerPrefix": "Bearer",
+								"queryParamKey": "token",
+								"header": "{}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"brahamzapata1992@gmail.com\",\r\n    \"password\": \"1023917854\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/authenticate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Crear_Categoria",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"ruido\",\r\n  \"description\": \"ruido descripcion\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/api/admin/category"
+							},
+							"response": []
+						},
+						{
+							"name": "Listar_Categorias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/api/admin"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Crear_Producto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "guitarra electrica",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "guitarra blanca",
+											"type": "text"
+										},
+										{
+											"key": "categoryId",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "img ",
+											"type": "file",
+											"src": "postman-cloud:///1eeb305a-db5d-4f50-8820-d2c48c3d60cc"
+										}
+									]
+								},
+								"url": "http://localhost:8081/api/admin/product"
+							},
+							"response": []
+						},
+						{
+							"name": "Listar_Productos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/api/admin/products"
+							},
+							"response": []
+						},
+						{
+							"name": "Listar_Por_Nombres",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8081/api/admin/products/search/blanco"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar_Producto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://localhost:8081/api/admin/product/8"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar_Producto",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Nuevo nombre del producto\",\r\n    \"price\": 39.99,\r\n    \"description\": \"Nueva descripción del producto\",\r\n    \"categoryId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8081/api/admin/product/3"
+							},
+							"response": []
+						},
+						{
+							"name": "Filtrar_por_categorias",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Producto_Por_Id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

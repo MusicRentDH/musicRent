@@ -8,7 +8,8 @@ import CrearProducto from "./components/body/admin/adminProducts/crearProducto/C
 import AdminProducts from "./components/body/admin/adminProducts/AdminProducts";
 import Dashboard from "./components/body/admin/Dashborard/Dashboard";
 import PublicDetalleProducto from  './components/body/public/publicProducts/publicDetalleProducto/PublicDetalleProducto'
-
+import RegistrationForm from  './components/body/public/registrationForm/RegistrationForm'
+import LoginPage from './components/body/public/login/loginPage/LoginPage'
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<PublicProducts />} />
+            <Route path="/sign-up" element={<RegistrationForm />} />
+            <Route path="/authenticate" element={<LoginPage />} />            
             <Route path="/detalle-producto/:id" element={<PublicDetalleProducto />} />
             <Route path="/admin" element={<Dashboard />} />
             <Route path="/admin/Administrar-Productos" element={<AdminProducts />} />                

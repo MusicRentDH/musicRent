@@ -1,5 +1,4 @@
 // ApiContext.js
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const ApiContext = createContext();
@@ -82,8 +81,54 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const registerUser = async (userData) => {
+    try {
+      const response = await fetch('http://localhost:8081/sign-up', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        // Manejar registro exitoso
+        console.log('Usuario registrado exitosamente');
+      } else {
+        // Manejar errores de registro
+        console.error('Error en el registro de usuario');
+      }
+    } catch (error) {
+      // Manejar errores de red u otros errores
+      console.error('Error de red:', error);
+    }
+  };
+
+  const authenticateUser = async (userData) => {
+    try {
+      const response = await fetch('http://localhost:8081/authenticate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        // Manejar autenticación exitosa
+        console.log('Usuario autenticado exitosamente');
+      } else {
+        // Manejar errores de autenticación
+        console.error('Error en la autenticación de usuario');
+      }
+    } catch (error) {
+      // Manejar errores de red u otros errores
+      console.error('Error de red:', error);
+    }
+  };
+
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, registerUser, authenticateUser }}>
       {children}
     </ApiContext.Provider>
   );

@@ -8,16 +8,16 @@ import logo from "../../assets/Header/logo.svg";
 import "./footer.css";
 
 function Footer() {
-    return (
-        <footer className="container">
-         <div className="containeriz"> 
+   return (
+      <footer>
+         <div className="container"> 
             <p className='p2'><img  src={logo} alt="Logo" /></p>
-            <p style={{ color: '#666666'}}>&copy; 2024 Copyright.MusicRent</p>
+            <p className='Copy'>&copy; 2024 Copyright.MusicRent</p>
             
          </div> 
             
-        </footer>
-    );
+      </footer>
+   );
 }
 export default Footer;
 

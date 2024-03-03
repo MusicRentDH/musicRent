@@ -25,14 +25,19 @@ const Header = () => {
           <div></div>
           <div></div>
         </button>
-        
+
+        <Link to='/authenticate'> {/* Envuelve el botón con Link y proporciona la ruta a RegistrationForm */}
+    
         <button className='button-header-login'>
           {/*<p className='clogin'>
             <CiLogin className='icon-login' />
           </p>*/}
           <p className='boton-text-loguin'>Iniciar Sesion</p>
         </button>
-        <button className='button-header-close'>Cerrar Sesion</button>
+        </Link>
+        <Link to='/sign-up'> {/* Envuelve el botón con Link y proporciona la ruta a RegistrationForm */}
+        <button className='button-header-create'>Crear Cuenta</button>
+        </Link>
       </div>
     </div>
   );

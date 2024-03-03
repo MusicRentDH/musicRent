@@ -1,5 +1,5 @@
 .div {
-  width: 10vh;
+  width: 100vh;
 }
 
 .productos-container {
@@ -93,11 +93,12 @@ h3 {
 }
 
 .container-pagination {
+  height: 20vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
-  margin-left: 4rem;
+  margin-left: 17rem;
   margin-right: 4rem;
   margin-bottom: 4rem;
 }

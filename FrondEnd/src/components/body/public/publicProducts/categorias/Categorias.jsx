@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './categorias.css';
 import icono_cuerdas from '../../../../../assets/Categorias/icono_cuerdas.svg'
-import icono_percusion from '../../../../../assets/Categorias/icono_percusion.svg'
-
 
 
 

@@ -1,15 +1,22 @@
 /* Footer.css hola esta es u*/
-.container {
-  background-color: #EEEEEE;
-  color: #fff;
-  padding: 20px;
-  text-align: left;
-  font-family: "Monserrat";
-  justify-content: space-between;
+.container {  
+  position: fixed;
+  bottom: 0rem; /* Alinea el footer en la parte inferior de la ventana del navegador */
   display: flex;
-  height: auto;
-  text-align: justify;
-  margin-top: auto;
+  flex-direction: column;
+  background-color: #EEEEEE;
+  width: 100%;
+  height: auto;  
+  font-family: "Monserrat";   
+  padding: 1rem 4rem;  
+}
+
+.Copy {
+  color: #666666;
+  
+  font-size: 1rem;
+  text-align: left;
+  
 }
 
 /*@media (max-width: 768px) {
@@ -21,59 +28,12 @@
  /* }*/
 /*}*/
 
-p {
-  margin:0;
-  padding: 0;
-}
-.container {
-  max-width: 100%;
-  margin: 20, auto;
-  font-family: "Monserrat";
-}
 
-.containerder{
-  text-align: right;  
-  flex: 1;
-  max-width: 100%;
-  justify-content: space-between;
-  line-height: 20px;
-}
 
-.containeriz{
-  text-align: left;
-  flex: 1;
-  max-width: 100%;
-  justify-content: space-between;
-  line-height: 20px;
-}
 
-.info {
-  text-align: left;
-}
 
-p, .p2, .p3 {
-  font-family: "Monserrat";
-  margin: 20px auto;
-  margin-inline: 35px;
-}
 
-.p2 {
-  width: 50%; /* Cambia el porcentaje según lo que necesites */
-  max-width: 50%; /* Asegura que la imagen no sea más grande que su tamaño original */
-  height: auto; /* Mantiene la proporción original de la imagen */
-}
 
-.socialmedia {
-  text-align: right;
-}
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
 
-  .containeriz, .containerder {
-    max-width: 100%;
-    align-items: flex-start; /* Alinear elementos a la izquierda en dispositivos pequeños */
-  }
-}
+

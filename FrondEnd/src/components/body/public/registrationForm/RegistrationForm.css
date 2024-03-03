@@ -1,0 +1,69 @@
+.registration-form-container{
+    display: flex;
+    height: 84vh;
+    width: 100%;
+    align-items: center;
+    
+    
+    
+}
+.registration-form-container img{
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh; /* Limita la altura máxima a la altura de la pantalla */
+
+
+}
+.form{
+    padding: 1rem 11rem ;
+
+}
+.h2_crear_cuenta{
+    margin-top: 3rem;
+    font-weight: bold;
+    font-size: 4rem;
+    color: rgb(253, 163, 16); /* Amarillo en RGB */
+
+    
+}
+.form-group{
+    left: 4.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+
+}
+label{
+    opacity: 70%;
+}
+input{
+    font-size: 1.5rem;
+    
+}
+button[type="submit"] {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    
+    padding: 1rem;
+    box-sizing: border-box;
+    display: block; /* Asegura que el botón se muestre como un bloque para ocupar todo el ancho disponible */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    margin-left: 4.5rem; /* Mueve el botón hacia la izquierda 4 rem */
+border-radius: 1rem;
+  }
+.inf{
+   margin-left: 8rem;
+   margin-top: 1rem;
+    text-align: center;
+    padding: 2rem;
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.inf span {
+    
+    font-weight: bold;
+}
+.error-message {
+    text-align: left;
+  } 

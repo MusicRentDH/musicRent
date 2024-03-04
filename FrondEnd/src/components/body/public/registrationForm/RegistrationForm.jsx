@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './RegistrationForm.css'; // Estilos CSS para el formulario de registro
 import img_registration from '../../../../assets/Crear_Cuenta/crear cuenta.png'; // Importa la imagen de registro
+import { Link } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -133,12 +134,12 @@ const RegistrationForm = () => {
             onChange={handleChange}
           />
           <p className="error-message">{formErrors.passwordError}</p>
-        </div>
-        
-        <button  type="submit">Crear Cuenta</button>
-       
+        </div>        
+        <button  type="submit">Crear Cuenta</button>       
         <div className='inf'>
+        <Link to='/authenticate'>
         <p>¿Ya tienes una cuenta creada? <span>Iniciar Sesión</span></p>
+        </Link>
         </div>
       </form>
       </div>

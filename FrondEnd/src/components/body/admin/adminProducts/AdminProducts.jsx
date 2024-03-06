@@ -33,7 +33,7 @@ const AdminProducts = () => {
   );
 
   const columns = [
-    /*{
+    {
       name: 'Imagen',
       selector: (row) => row.images[0].imageData,
       cell: ({ images }) => (
@@ -47,7 +47,7 @@ const AdminProducts = () => {
           )}
         </div>
       ),
-    },*/
+    },
     {
       name: "ID",
       selector: (row) => row.id,
@@ -59,11 +59,11 @@ const AdminProducts = () => {
       sortable: true,
     },
     
-    /*{
+    {
       name: "Categoría",
       selector: (row) => row.categoryName,
       sortable: true,
-    },*/
+    },
     {
       name: 'Acción',
       cell: CustomActionsCell,

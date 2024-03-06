@@ -7,6 +7,7 @@
   background-image: url('../../../../../assets/BarraBusquedaHome/fondo_home.svg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 100px;
 }
 
 .container-izquierdo {
@@ -38,6 +39,8 @@ p.text-barra {
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.411);
   padding-left: 20px;
+  border: none;
+  font-size: 20px;
 }
 
 .boton-barra {
@@ -48,6 +51,7 @@ p.text-barra {
   margin-left: 10px;
   background-color: black;
   color: white;
+  cursor: pointer;
 }  
 
 .container-derecho {        
@@ -57,6 +61,65 @@ p.text-barra {
 .chica-guitarra {    
   margin-bottom: 35px;
 }
+.dropdown{
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;  
+  align-items: center;
+  width: 163px;
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  margin-left: 20px;
+  text-align: center;
+  color: #666666;
+}
+.icnn-drop-down{
+  cursor: pointer;
+}
+
+/* Modal -categoras */
+.modal-categorias {
+  position: absolute;
+  top: 39%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 150px; /* Ajusta el ancho máximo según tus preferencias */
+  background-color: white; /* Fondo blanco para el contenido del modal */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1; /* Asegura que esté sobre el resto de la página */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: black; /* Color del icono de cierre */
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-item {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 10px;
+}
+
 
 
 
@@ -73,13 +136,28 @@ p.text-barra {
     margin-left: 35px;
   }
   .boton-barra {
-    display: none;
+    position: absolute;
+    top: 30%;
+    left: 6%;
   }    
   .input-barra{
       width: 240px;
   }
   .container-principal {
       overflow-x: hidden;
+  }
+  .modal-categorias{
+    top: 34.7%;
+    left: 82%;
+  }
+  .text-barra{
+    width: 80%;    
+  }
+  .container-izquierdo{
+    justify-content: flex-start;
+  }
+  .input-container{
+    margin-top: 20px;
   }    
          
 }

@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './categorias.css';
-import icono_cuerdas from '../../../../../assets/Categorias/icono_cuerdas.svg'
-import icono_percusion from '../../../../../assets/Categorias/icono_percusion.svg'
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 const Categorias = () => {
-  
   const [categorias, setCategorias] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Llamada a la API para obtener las categorías
-    fetch('http://localhost:8081/api/admin')
+    fetch('http://localhost:8081/api/admin/list')
       .then(response => response.json())
       .then(data => {
         setCategorias(data);
@@ -20,25 +16,23 @@ const Categorias = () => {
       .catch(error => {
         console.error('Error fetching categorias:', error);
       });
-  }, []); // Se ejecuta solo una vez al montar el componente*/
+  }, []);
 
-  
+  const handleClick = (categoria) => {    
+    navigate(`/categoria/${categoria.id}/${categoria.name}`);
+  };
 
   return (
     <div>
       <h2>Busca por tipo de instrumento</h2>
-      <div className='categorias-container'>  
-          
+      <div className='categorias-container'>
         {categorias.map((categoria) => (
           <button key={categoria.id} className='categoria-button' onClick={() => handleClick(categoria)}>
-            <img src={icono_cuerdas} alt="icono_cuerdas" />
-          
-
-          
+            <img
+              src={`data:image/svg+xml;base64,${categoria.img}`} 
+              alt={`icono_${categoria.name}`}
+            />
             {categoria.name}
-            
-            
-
           </button>
         ))}
       </div>

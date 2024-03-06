@@ -13,6 +13,7 @@ const Dashboard = () => {
                     <h2>Administra, crea, edita y elimina</h2>
                     <div><h2 clas>instrumentos musicales</h2></div>
                     <button className='btn-dashboard' onClick={()=>navigate("/admin/Administrar-Productos")}>Lista de productos</button>
+                    <button className='btn-dashboard' onClick={()=>navigate("/admin/Administrar-Caracteristicas")}>Caractersticas</button>
                 </section>
         </div>        
     </div>
@@ -20,3 +21,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+

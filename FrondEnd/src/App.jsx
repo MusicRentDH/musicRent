@@ -8,6 +8,9 @@ import CrearProducto from "./components/body/admin/adminProducts/crearProducto/C
 import AdminProducts from "./components/body/admin/adminProducts/AdminProducts";
 import Dashboard from "./components/body/admin/Dashborard/Dashboard";
 import PublicDetalleProducto from  './components/body/public/publicProducts/publicDetalleProducto/PublicDetalleProducto'
+import AdminFeatures from "./components/body/admin/adminProducts/crearCategorias/AdminFeatures";
+import CrearFeatures from "./components/body/admin/adminProducts/crearCategorias/CrearFeatures";
+
 
 
 function App() {
@@ -20,6 +23,8 @@ function App() {
             <Route path="/" element={<PublicProducts />} />
             <Route path="/detalle-producto/:id" element={<PublicDetalleProducto />} />
             <Route path="/admin" element={<Dashboard />} />
+            <Route path="/admin/Administrar-Caracteristicas" element={<AdminFeatures />} />
+            <Route path= "/admin/Administrar-Caracteristicas/crear-nueva" element={<CrearFeatures/>} />
             <Route path="/admin/Administrar-Productos" element={<AdminProducts />} />                
             <Route path="/admin/Administrar-Productos/crear-producto" element={<CrearProducto />} />
             <Route path="*" element={<p>Not found</p>} />

@@ -57,6 +57,7 @@ const IniciarSesion = () => {
         userName: data.name,
         userId: data.userId,
         lastName: data.lastName,
+        email: data.email
       });
 
       switch (data.role) {

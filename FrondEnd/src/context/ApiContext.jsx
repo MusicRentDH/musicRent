@@ -66,6 +66,24 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const editProduct = async (productData) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/products/${id}`, {
+        method: 'PUT',
+        body: productData,
+      });
+
+      if (response.ok) {
+        const newProduct = await response.json();
+        setProductos((prevProductos) => [...prevProductos, newProduct]);
+      } else {
+        setError('Error editing product');
+      }
+    } catch (error) {
+      setError('Error editing product');
+    }
+  };
+
   const fetchProductById = async (id) => {
     try {
       const response = await fetch(`http://localhost:8081/api/admin/products/${id}`);
@@ -83,7 +101,7 @@ export const ApiProvider = ({ children }) => {
   };
 
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, editProduct, fetchProductById }}>
       {children}
     </ApiContext.Provider>
   );

@@ -73,7 +73,7 @@ const Header = () => {
         <p className='logo-text'>{logoText}</p>
       </div>
 
-      {loggedInUser && (loggedInUser.userRole === 'ADMIN' || loggedInUser.userRole === 'CUSTOMER') && (
+      {loggedInUser && (loggedInUser.userRole === 'ADMIN') && (
         <div className="navBar-Admin">
           <ul>
             {routes.map(route => (

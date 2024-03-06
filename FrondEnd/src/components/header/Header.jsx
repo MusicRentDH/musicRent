@@ -34,7 +34,7 @@ const Header = () => {
   
 
   useEffect(() => {
-    console.log("Datos del usuario:", loggedInUser);
+    
   }, [loggedInUser]);
 
   const routes = [

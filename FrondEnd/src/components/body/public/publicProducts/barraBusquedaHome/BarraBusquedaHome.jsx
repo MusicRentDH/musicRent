@@ -3,7 +3,7 @@ import './BarraBusquedaHome.css';
 import imagen from '../../../../../assets/BarraBusquedaHome/Chica-guitarra.png';
 import { IoIosArrowDropdown } from "react-icons/io";
 
-const BarraBusquedaHome = () => {
+const BarraBusquedaHome = ({ onCategoryChange }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [categories, setCategories] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,20 +22,21 @@ const BarraBusquedaHome = () => {
         setCategories(mappedCategories);
       })
       .catch((error) => console.error('Error fetching categories:', error));
-  }, [modalOpen]); // Se ejecutará cuando modalOpen cambie
+  }, [modalOpen]); 
 
   const handleCheckboxChange = (id) => {
     setCategories((prevCategories) =>
+    
       prevCategories.map((category) =>
         category.id === id ? { ...category, checked: !category.checked } : category
       )
     );
   };
 
-  const handleSearch = () => {
-    // Aquí puedes utilizar searchTerm y categories para realizar la búsqueda
-    console.log('Término de búsqueda:', searchTerm);
-    console.log('Categorías seleccionadas:', categories.filter((category) => category.checked));
+  const handleSearch = () => {    
+    categories.filter((category) => category.checked)
+    onCategoryChange(categories.filter((category) => category.checked));
+
   };
 
   return (

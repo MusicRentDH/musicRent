@@ -3,64 +3,62 @@ import { useApi } from '../../../../../context/ApiContext';
 import { Link } from 'react-router-dom';
 import './card.css';
 
-const Card = () => {
+const Card = ({ selectedCategories }) => {
   const { productos } = useApi();
   const [currentPage, setCurrentPage] = useState(1);
   const [productosPerPage, setProductosPerPage] = useState(10);
   const [currentProductos, setCurrentProductos] = useState([]);
 
   useEffect(() => {
-    // Calcular el índice del último producto en la página actual
     const indexOfLastProducto = currentPage * productosPerPage;
-    // Calcular el índice del primer producto en la página actual
     const indexOfFirstProducto = indexOfLastProducto - productosPerPage;
-    // Seleccionar los productos para la página actual
-    const productosForPage = productos.slice(indexOfFirstProducto, indexOfLastProducto);
+    const productosForPage = productos
+      .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
+      .slice(indexOfFirstProducto, indexOfLastProducto);
+
+    console.log('Productos filtrados por categoría:', productosForPage);
     setCurrentProductos(productosForPage);
-  }, [currentPage, productos, productosPerPage]);
+  }, [currentPage, productos, productosPerPage, selectedCategories]);
 
   useEffect(() => {
-    // Al cambiar los productos, asegurarse de seleccionar aleatoriamente 10 productos para mostrar
-    const randomProductos = productos.sort(() => Math.random() - 0.5).slice(0, 10);
-    setCurrentProductos(randomProductos);
-  }, [productos]);
+    const randomProductos = productos
+      .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
 
-  // Cambiar a la siguiente página
+    console.log('Productos aleatorios por categoría:', randomProductos);
+    setCurrentProductos(randomProductos);
+  }, [productos, selectedCategories]);
+
   const nextPage = () => {
     if (currentProductos.length === productosPerPage) {
       setCurrentPage(currentPage + 1);
     }
   };
 
-  // Cambiar a la página anterior
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
   };
 
-  // Ir a la primera página
   const goToFirstPage = () => {
     setCurrentPage(1);
   };
 
-  // Ir a la última página
   const goToLastPage = () => {
     setCurrentPage(Math.ceil(productos.length / productosPerPage));
   };
 
-  // Cambiar a una página específica
   const goToPage = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  // Cambiar la cantidad de productos por página
   const handleChangePerPage = (event) => {
     setProductosPerPage(parseInt(event.target.value));
-    setCurrentPage(1); // Regresar a la primera página al cambiar la cantidad de productos por página
+    setCurrentPage(1);
   };
 
-  // Generar los números de página
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(productos.length / productosPerPage); i++) {
     pageNumbers.push(i);
@@ -69,8 +67,7 @@ const Card = () => {
   return (
     <div>
       <h2>Instrumentos Recomendados</h2>
-      <div className="recomendados">
-      </div>
+      <div className="recomendados"></div>
       <div className="productos-container">
         {currentProductos.map((producto, index) => (
           <div key={`${producto.id}-${index}`} className="producto-card">

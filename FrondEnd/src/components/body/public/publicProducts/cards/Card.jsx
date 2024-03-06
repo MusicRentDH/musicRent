@@ -16,7 +16,7 @@ const Card = ({ selectedCategories }) => {
       .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
       .slice(indexOfFirstProducto, indexOfLastProducto);
 
-    console.log('Productos filtrados por categoría:', productosForPage);
+    
     setCurrentProductos(productosForPage);
   }, [currentPage, productos, productosPerPage, selectedCategories]);
 
@@ -25,10 +25,13 @@ const Card = ({ selectedCategories }) => {
       .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
       .sort(() => Math.random() - 0.5)
       .slice(0, 10);
-
-    console.log('Productos aleatorios por categoría:', randomProductos);
+    
     setCurrentProductos(randomProductos);
   }, [productos, selectedCategories]);
+
+  const totalProductos = productos
+    .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
+    .length;
 
   const nextPage = () => {
     if (currentProductos.length === productosPerPage) {
@@ -66,7 +69,7 @@ const Card = ({ selectedCategories }) => {
 
   return (
     <div>
-      <h2>Instrumentos Recomendados</h2>
+      <h2>Instrumentos Recomendados: total {totalProductos}</h2>
       <div className="recomendados"></div>
       <div className="productos-container">
         {currentProductos.map((producto, index) => (

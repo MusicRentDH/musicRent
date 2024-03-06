@@ -11,7 +11,7 @@ export const ApiProvider = ({ children }) => {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   const updateLoggedInUser = (userData) => {
-    setLoggedInUser(userData);
+    setLoggedInUser(userData);  
   };
 
 

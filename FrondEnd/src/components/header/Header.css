@@ -152,6 +152,10 @@ p.logo-text {
 .link-header-perfil:hover{
   color: #FDA310;
 }
+.circle-login-cerrar-sesion:hover{
+  color: #FDA310;
+  cursor: pointer;
+}
 
 @media (max-width: 767px) {
   .container-header {

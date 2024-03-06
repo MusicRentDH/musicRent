@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApi } from '../../context/ApiContext';
 import LogoPrincipal from '../../assets/Header/logo.svg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { TbUsers } from "react-icons/tb";
 import { TbCategoryPlus } from "react-icons/tb";
 import { CiViewList } from "react-icons/ci";
@@ -11,10 +11,15 @@ import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { loggedInUser } = useApi();
+  const { loggedInUser, updateLoggedInUser } = useApi();
   const primeraLetraNombre = loggedInUser && loggedInUser.userName ? loggedInUser.userName.charAt(0) : '';
   const primeraLetraApellido = loggedInUser && loggedInUser.lastName ? loggedInUser.lastName.charAt(0) : '';
-  
+  const navigate = useNavigate();
+
+  const handleLogout =() =>{
+    updateLoggedInUser(null);
+    navigate('/');
+  }
 
   const logoText =
     loggedInUser && loggedInUser.userRole === 'ADMIN'
@@ -67,21 +72,35 @@ const Header = () => {
         </Link>
         <p className='logo-text'>{logoText}</p>
       </div>
-      {loggedInUser && loggedInUser.userRole === 'ADMIN' ? (
+
+      {loggedInUser && (loggedInUser.userRole === 'ADMIN' || loggedInUser.userRole === 'CUSTOMER') && (
         <div className="navBar-Admin">
-          {/* Contenido del menú de administrador */}
+          <ul>
+            {routes.map(route => (
+              <li key={route.to} className='listado-nav-admin nav-item' >
+                <NavLink
+                  style={({ isActive }) => ({
+                    color: isActive ? '#fa9c05' : 'black',
+                  })}
+                  to={route.to}
+                >
+                  <div className="nav-item-admin">
+                    <div className="nav-icon-admin">{route.image}</div>
+                    <div className="nav-text-admin">{route.text}</div>
+                  </div>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
-      ) : null}
-  
-      <div className='contenedor-botones-header'>
-        {/* Botón de hamburguesa */}
+      )}  
+      <div className='contenedor-botones-header'>        
         <button className='burger-menu' onClick={toggleMenu}>
           <div></div>
           <div></div>
           <div></div>
         </button>
-        {loggedInUser ? (
-          // Si hay datos del usuario, mostrar el contenedor del usuario
+        {loggedInUser ? (          
           <div className='container-login-user'>
             <div className="circle-login-avatar-user">
               {primeraLetraNombre}
@@ -92,15 +111,13 @@ const Header = () => {
                 <p>{`${loggedInUser.userName} ${loggedInUser.lastName}`}</p>
               </Link>              
             </div>
-            <div className="circle-login-cerrar-sesion">
-              <p className="circle-login-cerrar-sesion-boton">
-                {/* Aquí deberías poner el componente o el código para cerrar sesión */}
+            <div className="circle-login-cerrar-sesion" onClick={handleLogout}>
+              <p className="circle-login-cerrar-sesion-boton">                
                 <CiLogout className='boton-cerrar-sesion-header' />Cerrar Sesión
               </p>
             </div>
           </div>
-        ) : (
-          // Si no hay datos del usuario, mostrar los botones de inicio de sesión y registro
+        ) : (          
           <>
             <Link className='link-boton-inisiar' to='/inicioSesion'>
               <button className='button-header-login'>

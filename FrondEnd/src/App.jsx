@@ -14,6 +14,7 @@ import AdminCategorias from './components/body/admin/adminCategorias/AdminCatego
 import AdminCaracteristicas from './components/body/admin/adminCaracteristicas/AdminCarasteristicas'
 import CrearCuenta from "./components/body/user/crearCuenta/CrearCuenta";
 import IniciarSesion from "./components/body/user/login/IniciarSesion";
+import Perfil from "./components/body/user/Perfil/Perfil";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
             /* seccion login*/
             <Route path="/registro" element={<CrearCuenta />}/>
             <Route path="/inicioSesion" element={<IniciarSesion />}/>
+            /* Perfil */
+            <Route path="/perfil" element={<Perfil />} />
             /* Paginas Admin */
             <Route path="/admin" element={<Dashboard />} />
             /* administrar productos

@@ -10,8 +10,8 @@ import "./footer.css";
 function Footer() {
    return (
       <footer>
-         <div className="container"> 
-            <p className='p2'><img  src={logo} alt="Logo" /></p>
+         <div className="container-footer"> 
+            <p className='logo'><img  src={logo} alt="Logo" /></p>
             <p className='Copy'>&copy; 2024 Copyright.MusicRent</p>            
          </div>
             
@@ -19,4 +19,6 @@ function Footer() {
    );
 }
 export default Footer;
+
+
 

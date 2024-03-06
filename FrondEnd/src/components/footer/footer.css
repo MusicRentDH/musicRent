@@ -1,6 +1,6 @@
 /* Footer.css hola esta es u*/
-.container {  
-  position: fixed;
+.container-footer {  
+  position: relative;
   bottom: 0rem; /* Alinea el footer en la parte inferior de la ventana del navegador */
   display: flex;
   flex-direction: column;
@@ -8,25 +8,31 @@
   width: 100%;
   height: auto;  
   font-family: "Monserrat";   
-  padding: 1rem 4rem;  
+  padding: 1rem 3rem;  
+}
+
+.logo{
+  width: 150px;
 }
 
 .Copy {
   color: #666666;
-  
-  font-size: 1rem;
+  font-size: 14px;
   text-align: left;
   
 }
 
-/*@media (max-width: 768px) {
-  .container {
+@media (max-width: 768px) {
+  .container-footer {  
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    height: auto; /* Ajusta la altura según tus necesidades */
-    /*margin-bottom: 0; /* Elimina cualquier espacio debajo del contenedor */
- /* }*/
-/*}*/
+    align-items: center;
+  }
+  .Copy {
+    text-align: center;
+  }
+}
+
 
 
 

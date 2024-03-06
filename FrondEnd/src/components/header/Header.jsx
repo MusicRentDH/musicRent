@@ -69,27 +69,11 @@ const Header = () => {
       </div>
       {loggedInUser && loggedInUser.userRole === 'ADMIN' ? (
         <div className="navBar-Admin">
-          <ul>
-            {routes.map(route => (
-              <li key={route.to} className='listado-nav-admin nav-item' >
-                <NavLink
-                  style={({ isActive }) => ({
-                    color: isActive ? '#fa9c05' : 'black',
-                  })}
-                  to={route.to}
-                >
-                  <div className="nav-item-admin">
-                    <div className="nav-icon-admin">{route.image}</div>
-                    <div className="nav-text-admin">{route.text}</div>
-                  </div>
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+          {/* Contenido del menú de administrador */}
         </div>
       ) : null}
-
-      <div className='contenedor-botones'>
+  
+      <div className='contenedor-botones-header'>
         {/* Botón de hamburguesa */}
         <button className='burger-menu' onClick={toggleMenu}>
           <div></div>
@@ -97,8 +81,24 @@ const Header = () => {
           <div></div>
         </button>
         {loggedInUser ? (
-          // Si hay datos del usuario, no mostrar los botones de inicio de sesión y registro
-          null
+          // Si hay datos del usuario, mostrar el contenedor del usuario
+          <div className='container-login-user'>
+            <div className="circle-login-avatar-user">
+              {primeraLetraNombre}
+              {primeraLetraApellido}
+            </div>
+            <div className="circle-login-nombre">
+              <Link to='/perfil' className='link-header-perfil'>
+                <p>{`${loggedInUser.userName} ${loggedInUser.lastName}`}</p>
+              </Link>              
+            </div>
+            <div className="circle-login-cerrar-sesion">
+              <p className="circle-login-cerrar-sesion-boton">
+                {/* Aquí deberías poner el componente o el código para cerrar sesión */}
+                <CiLogout className='boton-cerrar-sesion-header' />Cerrar Sesión
+              </p>
+            </div>
+          </div>
         ) : (
           // Si no hay datos del usuario, mostrar los botones de inicio de sesión y registro
           <>
@@ -113,29 +113,10 @@ const Header = () => {
           </>
         )}
       </div>
-      <div className='container-login-user'>
-      {loggedInUser && (
-        <>
-          <div className="circle-login-avatar">
-            {primeraLetraNombre}
-            {primeraLetraApellido}
-          </div>
-
-          <div className="circle-login-nombre">
-            <p>{`${loggedInUser.userName} ${loggedInUser.lastName}`}</p>
-          </div>
-
-          <div className="circle-login-cerrar-sesion">
-            <p className="circle-login-cerrar-sesion-boton">
-              {/* Aquí deberías poner el componente o el código para cerrar sesión */}
-              <CiLogout className='boton-cerrar-sesion-header' />Cerrar Sesión
-            </p>
-          </div>
-        </>
-      )}
-    </div>        
     </div>
   );
+  
 };
 
 export default Header;
+

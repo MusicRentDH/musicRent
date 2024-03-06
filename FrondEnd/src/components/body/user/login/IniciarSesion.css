@@ -1,51 +1,81 @@
-.login-page-container{
+.login-page-container {
     display: flex;
-    height: 84vh;
+    height: 100vh;
     width: 100%;
     align-items: center;    
 }
-.login-page-container img{
+
+.login-page-container img {
     width: 100%;
     height: 100vh;
     max-height: 100vh; /* Limita la altura máxima a la altura de la pantalla */
 }
-.form_login{
-    padding: 0rem 15rem ;
+
+.form_login {
+    padding: 1rem 11rem;
 }
-.h2_login{
-    margin-top: 3rem;
+
+.h2_login {
+    margin-top: 5rem;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
     color: rgb(253, 163, 16); /* Amarillo en RGB */    
 }
-.login_group{
+
+.login_group {
     margin-left: 4.5rem;
     margin-bottom: 2rem;
     display: flex;
-    flex-direction: column;
 }
-.login_group label{
+
+.login_group label {
     opacity: 70%;
-    padding: 0.5rem 0rem;
 }
+
 .login_group input {
     font-size: 1.5rem;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    opacity: 70%;    
 }
-.inf_login{
+
+
+button[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;    
+    padding: 1rem;
+    box-sizing: border-box;
+    display: block; /* Asegura que el botón se muestre como un bloque para ocupar todo el ancho disponible */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+    margin-left: 4.5rem; /* Mueve el botón hacia la izquierda 4 rem */
+    border-radius: 1rem;
+}
+
+.link-gris {
+    color: rgba(0, 0, 0, 0.742);
+    }
+
+.inf_login {
     margin-left: 8rem;
     margin-top: 1rem;
     text-align: center;
     padding: 2rem;
     opacity: 40%;
     cursor: pointer;
-    color: black;
 }
+
 .inf_login span {    
     font-weight: bold;
 }
+
 .error-message {
     text-align: left;
-} 
+}
+
+@media (max-width: 768px) {
+    .login-page-container img {
+        display: none; /* Oculta la imagen en dispositivos móviles */
+    }
+    
+    .form_login {
+        padding: 1rem;
+    }
+}

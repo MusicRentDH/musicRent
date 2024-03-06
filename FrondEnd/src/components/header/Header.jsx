@@ -16,6 +16,18 @@ const Header = () => {
   const primeraLetraApellido = loggedInUser && loggedInUser.lastName ? loggedInUser.lastName.charAt(0) : '';
   
 
+  const logoText =
+    loggedInUser && loggedInUser.userRole === 'ADMIN'
+    ? 'A D M I N I S T R A D O R'
+    : 'Encuentra tu nota perfecta con un solo clic';
+  const linkTo =
+    loggedInUser && loggedInUser.userRole === 'ADMIN'
+    ? '/admin'
+    : '/';
+
+
+  
+
   useEffect(() => {
     console.log("Datos del usuario:", loggedInUser);
   }, [loggedInUser]);
@@ -50,10 +62,10 @@ const Header = () => {
   return (
     <div className={`container-header ${menuOpen ? 'menu-open' : ''}`}>
       <div className='encabezado-logo'>
-        <Link to='/'>
+        <Link to={linkTo}>
           <img className='logo-header' src={LogoPrincipal} alt='' />
         </Link>
-        <p className='logo-text'>Encuentra tu nota perfecta con un solo clic</p>
+        <p className='logo-text'>{logoText}</p>
       </div>
       {loggedInUser && loggedInUser.userRole === 'ADMIN' ? (
         <div className="navBar-Admin">

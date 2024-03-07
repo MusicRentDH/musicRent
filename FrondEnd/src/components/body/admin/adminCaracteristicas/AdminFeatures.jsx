@@ -1,14 +1,12 @@
-import React from 'react'
-import { useState } from "react";
 import DataTable from "react-data-table-component";
 import { useApi } from '../../../../context/ApiContext';
-import editIcon from '../../../../../assets/Admin/Admin_Tablas/botonEditar.svg'
-import trashIcon from '../../../../assets/Admin/Admin_Productos/';
+import editIcon from '../../../../assets/Admin/Admin_Tablas/botonEditar.svg'
+import trashIcon from '../../../../assets/Admin/Admin_Tablas/botonEliminar.svg';
 import { ImPlus } from "react-icons/im";
 import { Link } from "react-router-dom"; 
 import './AdminFeatures.css'
 import { IoChevronBack } from "react-icons/io5";
-import ImgTrash from "../../../../../assets/Admin/Admin_Tablas/trash.png";
+import ImgTrash from "../../../../assets/Admin/Admin_Tablas/trash.png";
 import { useNavigate } from 'react-router-dom'
 
 const AdminFeatures = () => {

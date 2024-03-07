@@ -25,7 +25,7 @@ const AdminProducts = () => {
 
   const CustomActionsCell = ({ id, name, images }) => (
     <div>
-      <Link to="/admin/Administrar-Productos/editar-producto" className="link-boton">
+      <Link to={`/admin/Administrar-Productos/editar-producto/${id}`} className="link-boton">
         <button className="icon-button edit" onClick={() => handleDeleteClick(id, name, images)}>
           <img src={editIcon} alt="Editar" />
         </button>

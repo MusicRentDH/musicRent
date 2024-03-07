@@ -15,6 +15,7 @@ import AdminCaracteristicas from './components/body/admin/adminCaracteristicas/A
 import CrearCuenta from "./components/body/user/crearCuenta/CrearCuenta";
 import IniciarSesion from "./components/body/user/login/IniciarSesion";
 import Perfil from "./components/body/user/Perfil/Perfil";
+import EditarProducto from "./components/body/admin/adminProducts/editarProducto/EditarProducto";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             /* administrar productos
             <Route path="/admin/Administrar-Productos" element={<AdminProducts />} />                
             <Route path="/admin/Administrar-Productos/crear-producto" element={<CrearProducto />} />
-            
+            <Route path="/admin/Administrar-Productos/editar-producto/:id" element={<EditarProducto />} />
             /* administrar usuarios
             <Route path="/admin/Administrar-Usuarios" element={<AdminUsuarios />} /> 
             /* administrar categorias

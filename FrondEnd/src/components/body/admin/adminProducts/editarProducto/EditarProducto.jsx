@@ -1,31 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { useApi } from '../../../../../context/ApiContext';  
+import { useParams, Link } from 'react-router-dom';
+import { useApi } from '../../../../../context/ApiContext';
 import feliz from "../../../../../assets/Admin/Admin_Productos/icon-creation-product.png";
-import { Link } from 'react-router-dom';
-import './CrearProducto.css';
+import './EditarProducto.css';
 
-const CrearProducto = () => {
-  const { createProduct } = useApi();
+const EditarProducto = () => {
+  const { editProduct, fetchProductById } = useApi();
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
   const [instrumentName, setInstrumentName] = useState('');
   const [instrumentDescription, setInstrumentDescription] = useState('');
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState(0);
   const [image, setImage] = useState(null);
   const [validationErrors, setValidationErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
 
+  const { id } = useParams();
+
   useEffect(() => {
     fetchCategories();
+    fetchInstrumentData();
   }, []);
 
   const fetchCategories = async () => {
     try {
       const response = await fetch('http://localhost:8081/api/admin/list');
-      const data = await response.json();
-      setCategories(data);
+      if (response.ok) {
+        const data = await response.json();
+        setCategories(data);
+      } else {
+        console.error('Error fetching categories:', response.status);
+      }
     } catch (error) {
       console.error('Error fetching categories:', error);
+    }
+  };
+
+  const fetchInstrumentData = async () => {
+    try {
+      const product = await fetchProductById(id);
+
+      if (product) {
+        setInstrumentName(product.name);
+        setInstrumentDescription(product.description);
+        setPrice(product.price || 0);
+        setSelectedCategory(product.categoryId);
+        // Asegúrate de que el campo price y categoryId existan en tu objeto product
+      } else {
+        console.error('Error fetching product data:', id);
+      }
+    } catch (error) {
+      console.error('Error fetching product data:', error);
     }
   };
 
@@ -44,10 +69,8 @@ const CrearProducto = () => {
       errors.selectedCategory = 'Campo obligatorio';
     }
 
-    if (!price) {
-      errors.price = 'Campo obligatorio';
-    } else if (isNaN(price) || parseFloat(price) <= 0) {
-      errors.price = 'El precio debe ser un número mayor que cero';
+    if (!price || isNaN(price)) {
+      errors.price = 'Ingrese un precio válido';
     }
 
     if (!image) {
@@ -66,29 +89,19 @@ const CrearProducto = () => {
       const formDataObject = new FormData();
       formDataObject.append('name', instrumentName);
       formDataObject.append('description', instrumentDescription);
-      formDataObject.append('categoryId', selectedCategory);
       formDataObject.append('price', price);
+      formDataObject.append('categoryId', selectedCategory);
       formDataObject.append('images', image);
 
-      console.log('Datos que se enviarán a la API:', {
-        name: instrumentName,
-        description: instrumentDescription,
-        categoryId: selectedCategory,
-        price: price,
-        image: image,
-      });
-
       try {
-        // Utiliza la función createProduct del contexto en lugar de hacer la solicitud directamente
-        await createProduct(formDataObject);
-
+        await editProduct(formDataObject, id);
         setShowModal(true);
 
         // Limpiar el formulario
         setInstrumentName('');
         setInstrumentDescription('');
+        setPrice(0);
         setSelectedCategory('');
-        setPrice('');
         setImage(null);
         setValidationErrors({});
       } catch (error) {
@@ -98,11 +111,11 @@ const CrearProducto = () => {
   };
 
   return (
-    <div className='container_crear_producto'>
+    <div className='container_editar_producto'>
       <div className="form-container">
         <div className="form-title">
           <h2>
-            <span>+</span> Agregar Producto
+             Editar producto
           </h2>
         </div>
         <form className="form" onSubmit={handleSave}>
@@ -113,7 +126,7 @@ const CrearProducto = () => {
               id="nombreInstrumento"
               value={instrumentName}
               onChange={(e) => setInstrumentName(e.target.value)}
-              placeholder="Guitarra Hard Rock Yamaha..."
+              placeholder={`Nombre del Instrumento`}
             />
             {validationErrors.instrumentName && (
               <p className="error-message">{validationErrors.instrumentName}</p>
@@ -126,7 +139,7 @@ const CrearProducto = () => {
               id="descripcionInstrumento"
               value={instrumentDescription}
               onChange={(e) => setInstrumentDescription(e.target.value)}
-              placeholder="Esta guitarra tiene gran versatilidad a la hora de usar..."
+              placeholder={`Descripción del Instrumento`}
             />
             {validationErrors.instrumentDescription && (
               <p className="error-message">{validationErrors.instrumentDescription}</p>
@@ -135,11 +148,11 @@ const CrearProducto = () => {
           <div className="form-group">
             <label htmlFor="precioInstrumento">Precio del Instrumento</label>
             <input
-              type="text"
+              type="number"
               id="precioInstrumento"
               value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              placeholder="Ingrese el precio..."
+              onChange={(e) => setPrice(Number(e.target.value))}
+              placeholder={`Precio del Instrumento`}
             />
             {validationErrors.price && (
               <p className="error-message">{validationErrors.price}</p>
@@ -152,7 +165,6 @@ const CrearProducto = () => {
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
-              <option value="">Seleccione una categoría</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
                   {category.name}
@@ -174,10 +186,12 @@ const CrearProducto = () => {
               <p className="error-message">{validationErrors.image}</p>
             )}
           </div>
-          <div className='botones-form-crear'>
-            <button className='boton-guardar-crear' id='boton-guardar-crear' type="submit">Guardar</button>
+          <div className='botones-form'>
+            <button id='boton-guardar-crear' type="submit">Guardar</button>
             <Link to="/admin/Administrar-Productos" id='boton-guardar-cerrar-link'>
-              <button type="button" id='boton-guardar-cerrar' >Regresar</button>
+              <button id='boton-guardar-crear' type="button" className='cancelar-boton' onClick={() => setShowModal(true)}>
+                Cancelar
+              </button>
             </Link>
           </div>
         </form>
@@ -189,7 +203,7 @@ const CrearProducto = () => {
             <div style={{ textAlign: 'center' }}>
               <img className='icon-feliz' src={feliz} alt="icono" />
               <p className='text-modal'><strong>¡Felicidades!</strong></p>
-              <p className='text-modal'>El instrumento musical ha sido creado con éxito!!</p>
+              <p className='text-modal'>El instrumento musical ha sido editado con éxito!!</p>
             </div>
             <button className="cerrar-modal" onClick={() => setShowModal(false)}>Cerrar</button>
           </div>
@@ -199,4 +213,5 @@ const CrearProducto = () => {
   );
 };
 
-export default CrearProducto;
+export default EditarProducto;
+

@@ -120,12 +120,41 @@ form button:hover {
   background-color: rgba(0, 0, 0, 0.309);
   color: white;
 }
-.botones-form{
+.botones-form-crear{
   display: flex;
   justify-content:space-around;  
   width: 680px;
-  cursor: pointer;
+  height: 38px;
+  cursor: pointer;  
+  text-decoration: none;
 }
 .cerrar-modal:hover {
   background-color: rgba(0, 0, 0, 0.205);
+}
+.boton-guardar-crear{
+  width: 93px;
+  height: 38px;
+}
+#boton-guardar-crear{
+  width: 93px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;  
+}
+#boton-guardar-cerrar{
+  width: 93px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  background-color: #C8C8C8;
+  text-decoration: none; 
+}
+#boton-guardar-cerrar-link{
+  text-decoration: none;
 }

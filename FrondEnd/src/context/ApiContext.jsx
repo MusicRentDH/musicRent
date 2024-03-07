@@ -10,6 +10,29 @@ export const ApiProvider = ({ children }) => {
   const [categorias, setCategorias] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState(null);
 
+
+  const editProduct = async (formData, id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/products/${id}`, {
+        method: 'PUT',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Error editing product');
+      }
+
+      const editedProduct = await response.json();
+      setProductos((prevProductos) => {
+        return prevProductos.map((producto) => (producto.id === id ? editedProduct : producto));
+      });
+    } catch (error) {
+      setError('Error editing product');
+      throw error;
+    }
+  };
+
+
   const updateLoggedInUser = (userData) => {
     setLoggedInUser(userData);  
   };
@@ -199,7 +222,7 @@ export const ApiProvider = ({ children }) => {
   
 
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser  }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct  }}>
       {children}
     </ApiContext.Provider>
   );

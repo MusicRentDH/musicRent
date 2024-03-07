@@ -9,7 +9,7 @@ import './AdminProducts.css';
 import { IoChevronBack } from "react-icons/io5";
 import ImgTrash from "../../../../assets/Admin/Admin_Tablas/trash.png";
 const AdminProducts = () => {
-  const { productos, loading, error, deleteProduct, createProduct } = useApi();
+  const { productos, loading, error, deleteProduct, createProduct, editProduct } = useApi();
   const [confirmDelete, setConfirmDelete] = useState(null);
 
   const handleDeleteClick = (id, name, images) => {
@@ -25,7 +25,11 @@ const AdminProducts = () => {
 
   const CustomActionsCell = ({ id, name, images }) => (
     <div>
-      
+      <Link to="/admin/Administrar-Productos/editar-producto" className="link-boton">
+        <button className="icon-button edit" onClick={() => handleDeleteClick(id, name, images)}>
+          <img src={editIcon} alt="Editar" />
+        </button>
+      </Link>
       <button className="icon-button eliminate" onClick={() => handleDeleteClick(id, name, images)}>
         <img src={trashIcon} alt="Eliminar" />
       </button>
@@ -84,7 +88,7 @@ const AdminProducts = () => {
         <Link to="/admin/Administrar-Productos/crear-producto" className="link-boton">
           <button className="add-button">
             <p><ImPlus style={{ margin: '0 6px' }}/></p>
-            <p>Agregar Instrumento</p>
+            <p>Agregar productos</p>
           </button>
         </Link>
       </div>
@@ -95,7 +99,6 @@ const AdminProducts = () => {
         columns={columns}
         data={productos}
         selectableRows
-        fixedHeader
         striped
         pagination
       />

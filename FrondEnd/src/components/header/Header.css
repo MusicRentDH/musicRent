@@ -46,6 +46,7 @@ body {
 }
 .burger-menu{
   border-color: white;
+  display: none; 
   
 }
 
@@ -170,11 +171,11 @@ p.logo-text {
   }
 
   .burger-menu {
+    display: block; 
     width: 40px;
     height: 40px;
     background-color: transparent;
     border: none;
-    margin-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

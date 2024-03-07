@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useApi } from '../../../../context/ApiContext'; 
 import './CrearCuenta.css';
 import Modal from 'react-modal'; 
-import img_registration from '../../../../assets/CrearCuenta/crear cuenta.png';
+import img_registration from '../../../../assets/CrearCuenta/crearcuenta.png';
 import imgModal from '../../../../assets/Admin/Admin_Productos/icon-creation-product.png';
 
 const CrearCuenta = () => {
@@ -98,10 +99,10 @@ const CrearCuenta = () => {
 
   return (
     <div className="registration-form-container">
-      <div className='img'>
-        <img src={img_registration} alt="Registro" className="img_resgistration" />
+      <div className='img-create'>
+        <img className='img-create' src={img_registration} alt='CrearCuenta' />
       </div>
-      <div className='form'>
+      <div className='form-create'>
         <h2 className='h2_crear_cuenta'>Crear Cuenta</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -150,8 +151,11 @@ const CrearCuenta = () => {
           </div>
 
           <button type="submit">Crear Cuenta</button>
-          <div className='inf'>
-            <p>¿Ya tienes una cuenta creada? <span>Iniciar Sesión</span></p>
+          <div className='inf_create'>
+          <Link to='/inicioSesion' class="link-gris">
+          <p>¿Ya tienes una cuenta creada? <span>Iniciar Sesión</span></p>
+          </Link>
+
           </div>
         </form>
       </div>
@@ -174,5 +178,3 @@ const CrearCuenta = () => {
 };
 
 export default CrearCuenta;
-
-

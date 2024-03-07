@@ -72,17 +72,17 @@ const IniciarSesion = () => {
       setError(null);
     } catch (error) {
       console.error("Error al iniciar sesión:", error.message);
-      setError("Hubo un error durante el inicio de sesión. Por favor, inténtalo de nuevo.");
+      setError("Correo o contraseña invalidos. Por favor, inténtalo de nuevo.");
     }
   };
 
   return (
-    <div className='registration-form-container'>
-      <div className='img'>
-        <img src={img_login} alt="Login" className="img_login" />
+    <div className='login-page-container'>
+      <div className='img-login'>
+      <img className='img-login' src={img_login} alt='Iniciarsesión' />
       </div>
-      <div className='form'>
-        <h2 className='h2_crear_cuenta'>Iniciar Sesión</h2>
+      <div className='form-login'>
+        <h2 className='h2_login'>Iniciar Sesión</h2>
         <form onSubmit={handleLogin}>
           <div className='form-group'>
             <label htmlFor="email">Dirección de correo electrónico</label>
@@ -106,8 +106,8 @@ const IniciarSesion = () => {
           </div>
           <button type="submit">Iniciar Sesión</button>
         </form>
-        {error && <p className="error-message">{error}</p>}
-        <div className='inf'>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <div className='inf_login'>
           <Link to='/registro' class="link-gris">
             <p>¿Aún no tienes una cuenta creada? <span>Crea Cuenta</span></p>
           </Link>
@@ -118,4 +118,3 @@ const IniciarSesion = () => {
 };
 
 export default IniciarSesion;
-

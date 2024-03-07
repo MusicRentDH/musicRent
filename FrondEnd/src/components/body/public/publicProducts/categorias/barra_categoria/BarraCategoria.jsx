@@ -1,8 +1,9 @@
 import React from 'react';
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import Cuerdas from '../../../../../../assets/Categorias/imagen-categorias/imagen_hombre_cuerdas.svg';
-import Percusion from '../../../../../../assets/Categorias/imagen-categorias/percusion.png';
+import Percusion from '../../../../../../assets/Categorias/imagen-categorias/pianos.png';
 import Vientos from '../../../../../../assets/Categorias/imagen-categorias/imagen_hombre_vientos.svg';
+import Folcloricos from '../../../../../../assets/Categorias/imagen-categorias/hombre-folklolricos.png';
 import './BarraCategoria.css';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +11,8 @@ const BarraCategoria = ({ nombreCategoria }) => {
   const imagenes = {
     Cuerdas: Cuerdas,
     Percusion: Percusion,
-    Vientos: Vientos
+    Vientos: Vientos,
+    Folcloricos: Folcloricos
   };
 
   const normalizarCadena = (str) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");

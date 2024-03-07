@@ -1,68 +1,69 @@
-.login-page-container {
+.login-page-container{
     display: flex;
-    height: 100vh;
+    flex-direction: row;
+}
+
+.img-login {
+    width: 600px; /* Establece el ancho de la imagen */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier relleno */
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    align-content:last baseline; /* Alinea la imagen en la parte inferior */
+}
+
+
+form{
     width: 100%;
-    align-items: center;    
 }
 
-.login-page-container img {
+.form-login{
+    width: 50%;
+    margin-top: 70px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.form-group{
     width: 100%;
-    height: 100vh;
-    max-height: 100vh; /* Limita la altura máxima a la altura de la pantalla */
 }
 
-.form_login {
-    padding: 1rem 11rem;
-}
-
-.h2_login {
-    margin-top: 5rem;
+.h2_login{
     font-weight: bold;
     font-size: 2rem;
-    color: rgb(253, 163, 16); /* Amarillo en RGB */    
-}
-
-.login_group {
-    margin-left: 4.5rem;
-    margin-bottom: 2rem;
-    display: flex;
-}
-
-.login_group label {
-    opacity: 70%;
-}
-
-.login_group input {
-    font-size: 1.5rem;
+    color: rgb(253, 163, 16);
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 
 button[type="submit"] {
     width: 100%;
     font-size: 1rem;
-    font-weight: bold;    
+    font-weight: bold;
     padding: 1rem;
     box-sizing: border-box;
-    display: block; /* Asegura que el botón se muestre como un bloque para ocupar todo el ancho disponible */
-    margin: 0 auto; /* Centra el botón horizontalmente */
-    margin-left: 4.5rem; /* Mueve el botón hacia la izquierda 4 rem */
     border-radius: 1rem;
 }
 
+
 .link-gris {
     color: rgba(0, 0, 0, 0.742);
-    }
+    text-align: center;
+}
 
-.inf_login {
-    margin-left: 8rem;
-    margin-top: 1rem;
+.inf_login{
     text-align: center;
     padding: 2rem;
     opacity: 40%;
     cursor: pointer;
 }
 
-.inf_login span {    
+p{
+    text-align: center;
+}
+
+.inf_login span {
     font-weight: bold;
 }
 
@@ -71,11 +72,15 @@ button[type="submit"] {
 }
 
 @media (max-width: 768px) {
-    .login-page-container img {
-        display: none; /* Oculta la imagen en dispositivos móviles */
+    .img-login{
+        display: none;
     }
-    
-    .form_login {
-        padding: 1rem;
+
+    .form-login{
+        width: 100%;
+        margin-top: 50px;
+        margin-right: 2rem;
+        margin-left: 2rem;
     }
 }
+

@@ -36,7 +36,8 @@ function App() {
             <Route path="/admin" element={<Dashboard />} />
             /* administrar productos
             <Route path="/admin/Administrar-Productos" element={<AdminProducts />} />                
-            <Route path="/admin/Administrar-Productos/crear-producto" element={<CrearProducto />} />            
+            <Route path="/admin/Administrar-Productos/crear-producto" element={<CrearProducto />} />
+            
             /* administrar usuarios
             <Route path="/admin/Administrar-Usuarios" element={<AdminUsuarios />} /> 
             /* administrar categorias

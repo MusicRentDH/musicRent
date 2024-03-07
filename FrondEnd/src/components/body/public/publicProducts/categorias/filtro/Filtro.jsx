@@ -74,7 +74,7 @@ const Filtro = () => {
   return (
     <div className='barra-categoria-single'>
       <BarraCategoria nombreCategoria={nombreCategoria} />
-      <h2>Productos encontrados: {totalProducts}</h2>
+      <h2 className='text-filtro-title'>Productos encontrados: {totalProducts}</h2>
       <div className='filtro-container-categoria'>
         <div className="recomendados"></div>
         <div className="productos-container">

@@ -24,7 +24,7 @@ const Categorias = () => {
 
   return (
     <div>
-      <h2>Busca por tipo de instrumento</h2>
+      <h2 className='text-categoria-title'>Busca por tipo de instrumento</h2>
       <div className='categorias-container'>
         {categorias.map((categoria) => (
           <button key={categoria.id} className='categoria-button' onClick={() => handleClick(categoria)}>

@@ -21,7 +21,8 @@
 
 p.text-barra {  
   margin-inline: 0;  
-  margin: 0;    
+  margin: 0;
+  display: flex;      
 }
 
 .container-derecho {
@@ -119,6 +120,7 @@ p.text-barra {
 .checkbox {
   margin-right: 10px;
 }
+
 
 
 

@@ -4,3 +4,12 @@
 .barra-categoria-single{
     margin-top: 121px;    
 }
+.text-filtro-title{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+@media only screen and (max-width: 480px) {
+    .text-filtro-title{
+      margin-left: 20px;
+    }
+}

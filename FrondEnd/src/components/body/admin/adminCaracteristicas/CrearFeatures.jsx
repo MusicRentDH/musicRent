@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useApi } from '../../../../../context/ApiContext';  
-import feliz from "../../../../../assets/Admin/Admin_Productos/icon-creation-product.png";
+import { useApi } from '../../../../context/ApiContext';  
+import feliz from "../../../../assets/Admin/Admin_Productos/icon-creation-product.png";
 import { Link } from 'react-router-dom';
 import './CrearFeatures.css';
 

@@ -12,6 +12,8 @@ import Filtro from "./components/body/public/publicProducts/categorias/filtro/Fi
 import AdminUsuarios from './components/body/admin/adminUsuarios/AdminUsuarios'
 import AdminCategorias from './components/body/admin/adminCategorias/AdminCategorias'
 import AdminCaracteristicas from './components/body/admin/adminCaracteristicas/AdminCarasteristicas'
+import AdminFeatures from './components/body/admin/adminCaracteristicas/AdminFeatures'
+import CrearFeatures from './components/body/admin/adminCaracteristicas/CrearFeatures'
 import CrearCuenta from "./components/body/user/crearCuenta/CrearCuenta";
 import IniciarSesion from "./components/body/user/login/IniciarSesion";
 import Perfil from "./components/body/user/Perfil/Perfil";
@@ -44,7 +46,8 @@ function App() {
             /* administrar categorias
             <Route path="/admin/Administrar-Categorias" element={<AdminCategorias />} />
             /* administrar caracteristicas
-            <Route path="/admin/Administrar-Caracteristicas" element={<AdminCaracteristicas />} />
+            <Route path="/admin/Administrar-Caracteristicas" element={<AdminFeatures />} />
+            <Route path= "/admin/Administrar-Caracteristicas/crear-nueva" element ={<CrearFeatures/>} />
             <Route path="*" element={<p>Not found</p>} />
           </Routes>
           <Footer />

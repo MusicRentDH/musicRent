@@ -1,0 +1,102 @@
+.categorias-container-principal-admin{
+    margin-top: 7%;
+}
+.filter-search-bar-admin{
+    margin-bottom: 15px;
+    padding: 8px;
+       
+}
+.boton-admin-categoria{
+    width: 187px;
+    height: 38px;
+    background-color: #FDA310;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    margin-left: 33%;
+    
+}
+.container-boton-input-categoria{
+    display: flex;    
+    justify-content:end;
+    margin-right: 40px;
+        
+}
+
+.boton-admin-categoria:hover {
+    background-color: #fda210a9;
+}
+/* modal */
+.modal-categoria-edition{
+  width: 676px;
+  height: 383px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;  
+}
+
+.text-categorias-modal{
+    display: flex;
+    margin: 0;
+    justify-content: start;
+    align-items: center;
+    margin-top: 20px;    
+}
+.text-categoria-modal{ 
+    margin-top: 30px;
+    font-size: 22px;
+}
+.input-modal-categoria{
+    width: 613px;
+    height: 30px;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.172);
+    margin-top: 10px;
+    padding: 10px;
+}
+.spam-categoria{
+    color: red;
+}
+.archivo-categoria{
+    margin-top: 10px;
+}
+.botones-modal-categoria{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;        
+}
+.boton-modal-categoria-cerrar{
+    width: 93px;
+    height: 38px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.412);
+    cursor: pointer;
+}
+.boton-modal-categoria-guardar{
+    width: 93px;
+    height: 38px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: #FDA310;
+    cursor: pointer;
+}
+.boton-modal-categoria-cerrar:hover{
+    background-color: rgba(0, 0, 0, 0.204);
+}
+.boton-modal-categoria-guardar:hover{
+    background-color: #fda210bd; 
+}
+.text-categoria-modal-title{
+    margin-top: 10px;    
+    display: flex;
+    font-size: 16px;
+}

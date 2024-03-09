@@ -1,0 +1,37 @@
+.Barra-Categoria-container{
+    background-image: url('../../../../../../assets/BarraBusquedaHome/fondo_home.svg');    width: 100%;
+    width: 100%;
+    height: 211px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;    
+}
+.barra-categoria-izq{
+    width: 20%;
+    height: 100%;
+}
+.img-barra-categoria-izq{
+    width: 100%;
+    height: 100%;
+}
+.barra-categoria-cen{
+    margin-right: 280px;
+    font-size: 25px;
+}
+.barra-categoria-atras-text{
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+
+@media (max-width: 768px) {
+    .img-barra-categoria-izq {
+        display: none;
+    }
+    .barra-categoria-cen{
+        margin: 0px;                
+    }
+    
+}

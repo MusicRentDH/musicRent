@@ -1,0 +1,89 @@
+.login-page-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 60px;
+
+}
+
+.img-login {
+    width: 600px; /* Establece el ancho de la imagen */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier relleno */
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    align-content:last baseline; /* Alinea la imagen en la parte inferior */
+}
+
+
+form{
+    width: 100%;
+}
+
+.form-login{
+    width: 50%;
+    margin-top: 70px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.h2_login{
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgb(253, 163, 16);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+
+.link-gris {
+    color: rgba(0, 0, 0, 0.742);
+    text-align: center;
+}
+
+.inf_login{
+    text-align: center;
+    padding: 2rem;
+    opacity: 40%;
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+}
+
+.inf_login span {
+    font-weight: bold;
+}
+
+.error-message {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .img-login{
+        display: none;
+    }
+
+    .form-login{
+        width: 100%;
+        margin-top: 50px;
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}
+

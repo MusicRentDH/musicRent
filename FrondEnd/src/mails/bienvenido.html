@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Correo de Bienvenida</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
+      margin: 0;
+      padding: 15px;
+      border-radius: 15px;
+      background-color: rgba(232, 238, 243, 0.481);
+    }
+    .container {
+      max-width: 600px;
+      margin: 20PX auto;
+      text-align: center;
+      background-color: #FFF;
+      border-radius: 20px;
+    }
+    .header-correo{
+        background-color: #000000;
+        margin: auto; 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 20px 20px 0px 0px;  
+    }
+    .imagen-correo{
+        max-width: 200px;
+        margin: 15px;
+    }
+    h2, p {
+      color: #333;
+    }
+    .contenido{
+        margin: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: rgb(253, 163, 16);
+      color: #FFF;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 5px;
+    }
+    .FOOTER-correo{
+     margin: 15px;
+     margin-bottom: 20px; 
+     padding-top: 10px;
+     padding-bottom: 30px;  
+    }
+    /* Estilos específicos */
+    .logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+
+    }
+    .social-links a {
+      color: #007bff;
+      text-decoration: none;
+      margin: 10px;
+    }
+    .social-links img {
+      width: 30px; /* Ajusta el tamaño de los iconos según sea necesario */
+      height: auto;
+      margin: 15px; /* Ajusta el margen entre los iconos según sea necesario */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-correo">
+        <img class="logo" src="../assets/mail/logo blanco - fondo negro.svg" alt="Logo de MusicRent">
+    </div>
+
+    <div class="contenido">
+        <img class="imagen-correo" src="../assets/mail/correo.png" alt="Logo de MusicRent" width="100%"> 
+        <h2>¡Hola {{nombreUsuario}}!</h2>
+        <p>Tu registro en MusicRent ha sido exitoso. Estamos emocionados de darte la bienvenida a nuestra comunidad de amantes de la música.</p>    
+        <br>
+        <p><strong>Nombre de usuario:</strong> {{nombreUsuario}}</p>
+        <p><strong>Correo electrónico:</strong> {{correoElectronico}}</p>
+        <br>
+        <p>Para comenzar a explorar nuestra amplia selección de instrumentos musicales disponibles para rentar al mejor precio, haz clic aquí para iniciar sesión:</p>
+        <a href="{{urlInicioSesion}}" class="btn">Iniciar Sesión</a>
+        <br>
+        <p>¡Bienvenido a bordo y que disfrutes tu experiencia musical!</p>
+        <br>
+    </div>
+
+   <div class="footer-correo">
+        <img class="linea" src="../assets/mail/linea blanca.png" alt="Logo de MusicRent" width="100%">
+        <img class="logo" src="../assets/mail/logo.svg" alt="Logo de MusicRent">
+        <div class="social-links">
+            <a href="#"><img src="../assets/mail/facebook (1).png" alt="Facebook"></a>
+            <a href="#"><img src="../assets/mail/instagram.png" alt="Twitter"></a>
+            <a href="#"><img src="../assets/mail/twitter.png" alt="Instagram"></a>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

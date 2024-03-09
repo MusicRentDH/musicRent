@@ -127,7 +127,7 @@ const ListaCategorias = () => {
         <div className='modal-categoria-edition'>
           <div className='container-categorias-admin'>
             <h2 className='text-categorias-modal'><GoPlus /> Agregar Categoria</h2>
-            <p className='text-categoria-modal'>Nombre <span className='spam-categoria'>*</span></p>
+            <p className='text-categoria-modal-title'>Nombre <span className='spam-categoria'>*</span></p>
             <input
               className='input-modal-categoria'
               type="text"
@@ -135,7 +135,7 @@ const ListaCategorias = () => {
               name="name"
               onChange={handleInputChange}
             />
-            <p className='text-categoria-modal'>Descripcion <span className='spam-categoria'>*</span></p>
+            <p className='text-categoria-modal-title'>Descripcion <span className='spam-categoria'>*</span></p>
             <input
               className='input-modal-categoria'
               type="text"
@@ -143,7 +143,7 @@ const ListaCategorias = () => {
               name="description"
               onChange={handleInputChange}
             />
-            <p className='text-categoria-modal'>icono <span className='spam-categoria'>*</span ></p>
+            <p className='text-categoria-modal-title'>icono <span className='spam-categoria'>*</span ></p>
             <input
               className='archivo-categoria'
               type="file"

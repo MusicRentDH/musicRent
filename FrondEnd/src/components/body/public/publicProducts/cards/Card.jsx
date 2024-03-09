@@ -4,40 +4,41 @@ import { Link } from 'react-router-dom';
 import './card.css';
 
 const Card = ({ selectedCategories }) => {
-  const { productos } = useApi(); 
-  const [currentPage, setCurrentPage] = useState(1);  
-  const [productosPerPage, setProductosPerPage] = useState(10);  
+  const { productos } = useApi();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productosPerPage, setProductosPerPage] = useState(10);
   const [currentProductos, setCurrentProductos] = useState([]);
-  
+
   useEffect(() => {
-    
+    const filteredProductos = productos.filter(
+      producto =>
+        selectedCategories.length === 0 ||
+        selectedCategories.some(category => category.id === producto.categoryName)
+    );
+
     const indexOfLastProducto = currentPage * productosPerPage;
     const indexOfFirstProducto = indexOfLastProducto - productosPerPage;
-    
-    const productosForPage = productos
-      .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
-      .slice(indexOfFirstProducto, indexOfLastProducto);
-    
+
+    const productosForPage = filteredProductos.slice(indexOfFirstProducto, indexOfLastProducto);
+
     setCurrentProductos(productosForPage);
   }, [currentPage, productos, productosPerPage, selectedCategories]);
 
-  
-  useEffect(() => {    
-    const randomProductos = productos
-      .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 10);
-    
-    setCurrentProductos(randomProductos);
-  }, [productos, selectedCategories]);
-  
   const totalProductos = productos
     .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
     .length;
 
   const nextPage = () => {
-    if (currentProductos.length === productosPerPage) {
+    const lastPageIndex = Math.ceil(totalProductos / productosPerPage);
+
+    if (currentPage < lastPageIndex) {
       setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
     }
   };
 
@@ -66,7 +67,12 @@ const Card = ({ selectedCategories }) => {
             </div>
           </div>
         ))}
-      </div>      
+      </div>
+      <div className="pagination">
+        <button onClick={prevPage} disabled={currentPage === 1}>‹</button>
+        <span>{currentPage}</span>
+        <button onClick={nextPage} disabled={currentPage === Math.ceil(totalProductos / productosPerPage)}>›</button>
+      </div>
     </div>
   );
 };

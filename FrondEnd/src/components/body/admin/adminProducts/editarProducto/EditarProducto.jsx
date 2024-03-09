@@ -73,9 +73,7 @@ const EditarProducto = () => {
       errors.price = 'Ingrese un precio válido';
     }
 
-    if (!image) {
-      errors.image = 'Campo obligatorio';
-    }
+    
 
     setValidationErrors(errors);
 

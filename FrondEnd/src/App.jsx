@@ -11,7 +11,7 @@ import PublicDetalleProducto from  './components/body/public/publicProducts/publ
 import Filtro from "./components/body/public/publicProducts/categorias/filtro/Filtro";
 import AdminUsuarios from './components/body/admin/adminUsuarios/AdminUsuarios'
 import AdminCategorias from './components/body/admin/adminCategorias/AdminCategorias'
-import AdminCaracteristicas from './components/body/admin/adminCaracteristicas/AdminCarasteristicas'
+
 import AdminFeatures from './components/body/admin/adminCaracteristicas/AdminFeatures'
 import CrearFeatures from './components/body/admin/adminCaracteristicas/CrearFeatures'
 import CrearCuenta from "./components/body/user/crearCuenta/CrearCuenta";

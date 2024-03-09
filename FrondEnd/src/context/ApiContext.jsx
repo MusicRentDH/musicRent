@@ -9,6 +9,7 @@ export const ApiProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const [caracteristicas, setCaracteristicas] = useState([]);
 
 
   const editProduct = async (formData, id) => {
@@ -218,11 +219,82 @@ export const ApiProvider = ({ children }) => {
 
     fetchUsers();
   }, []);
+/* Caracteristicas */
+  useEffect(() => {
+    const fetchCaracteristicas = async () => {
+      try {
+        const response = await fetch('http://localhost:8081/api/admin/features');
+        if (response.ok) {
+          const data = await response.json();
+          setCaracteristicas(data);
+        } else {
+          setError('Error feature product data');
+        }
+      } catch (error) {
+        setError('Error feature product data');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  
+    fetchCaracteristicas();
+  }, []);
+
+  const deleteFeature = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/features/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setCaracteristicas((prevCaracteristicas) => prevCaracteristicas.filter(caracterisicas => caracterisicas.id !== id));
+      } else {
+        setError('Error deleting feature');
+      }
+    } catch (error) {
+      setError('Error deleting feature');
+    }
+  };
+
+  const createFeature = async (featureData) => {
+    try {
+      const response = await fetch('http://localhost:8081/api/admin/feature', {
+        method: 'POST',
+        body: featureData,
+      });
+
+      if (response.ok) {
+        const newCaracteristica = await response.json();
+        setCategorias((prevCaracteristica) => [...prevCaracteristica, newCaracteristica]);
+      } else {
+        setError('Error creating feature');
+      }
+    } catch (error) {
+      setError('Error creating feature ');
+    }
+  };
+
+  const fetchFeatureById = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/feature/${id}`);
+      if (response.ok) {
+        const feature = await response.json();
+        return feature;
+      } else {
+        setError('Error fetching feature by ID');
+        return null;
+      }
+    } catch (error) {
+      setError('Error fetching feature by ID');
+      return null;
+    }
+  };
 
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct  }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct, caracteristicas, deleteFeature, createFeature, fetchFeatureById  }}>
       {children}
     </ApiContext.Provider>
   );

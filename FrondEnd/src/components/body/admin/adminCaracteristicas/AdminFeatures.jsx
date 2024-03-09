@@ -8,6 +8,7 @@ import './AdminFeatures.css'
 import { IoChevronBack } from "react-icons/io5";
 import ImgTrash from "../../../../assets/Admin/Admin_Tablas/trash.png";
 import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
 
 const AdminFeatures = () => {
     const { caracteristicas, loading, error, deleteFeature, createFeature, fetchFeatureById} = useApi();

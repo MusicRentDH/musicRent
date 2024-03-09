@@ -33,7 +33,7 @@ const AdminProducts = () => {
       <button className="icon-button eliminate" onClick={() => handleDeleteClick(id, name, images)}>
         <img src={trashIcon} alt="Eliminar" />
       </button>
-    </div>
+    </div>  
   );
 
   const columns = [
@@ -105,7 +105,7 @@ const AdminProducts = () => {
 
       {confirmDelete && (
         <div className="modal-overlay">
-          <div className="modal">
+          <div className="modal" id="modal-borar">
             <img className="img-modal" src={ImgTrash} alt="" />
             <p className="text-modal" >{`¿Estas seguro que deseas eliminar el intrumento "${confirmDelete.name}?"`}</p>
             <div className="modal-content">              

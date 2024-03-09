@@ -1,0 +1,38 @@
+/* Footer.css hola esta es u*/
+.container-footer {  
+  position: relative;
+  bottom: 0rem; /* Alinea el footer en la parte inferior de la ventana del navegador */
+  display: flex;
+  flex-direction: column;
+  background-color: #EEEEEE;
+  width: 100%;
+  height: auto;  
+  font-family: "Monserrat";   
+  padding: 1rem 3rem;  
+}
+
+.logo{
+  width: 150px;
+}
+
+.Copy {
+  color: #666666;
+  font-size: 14px;
+  text-align: left;
+  
+}
+
+@media (max-width: 768px) {
+  .container-footer {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Copy {
+    text-align: center;
+  }
+}
+
+
+
+

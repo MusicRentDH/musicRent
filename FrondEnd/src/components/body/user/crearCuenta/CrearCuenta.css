@@ -1,0 +1,90 @@
+.registration-form-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-create {
+    width: 700px; /* Establece el ancho de la imagen */
+    height: auto; /* Ajusta la altura automáticamente según el ancho */
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier relleno */
+    display: block; /* Asegura que la imagen sea un elemento de bloque */
+    align-content:last baseline; /* Alinea la imagen en la parte inferior */
+}
+
+
+form{
+    width: 100%;
+}
+
+.form-create{
+    width: 50%;
+    margin-top: 60px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.form-group{
+    width: 100%;
+}
+
+.h2_crear_cuenta{
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgb(253, 163, 16);
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+p{
+    text-align: center;
+}
+
+
+.link-gris {
+    color: rgba(0, 0, 0, 0.742);
+}
+
+.inf_create{
+    text-align: center;
+    padding: 2rem;
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.inf_create span {
+    font-weight: bold;
+}
+
+.error-message {
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .img-create{
+        display: none;
+    }
+
+    .form-create{
+        width: 100%;
+        margin-top: 50px;
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+
+    .error-message {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+}

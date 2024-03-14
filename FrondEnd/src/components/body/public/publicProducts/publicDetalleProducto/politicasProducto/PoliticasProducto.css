@@ -1,0 +1,74 @@
+.modal-container {
+  position: fixed;
+  font-size: 1.5rem;
+  margin-top: 2rem; 
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  backdrop-filter: blur(5px); /* Desenfoque del fondo */
+}
+.politicas-header {
+  margin: 8rem 10rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.politicas-header h2{
+  padding: 2rem;
+  border-bottom: 1px solid rgb(213, 218, 229); /* Línea sólida de 1 píxel de grosor y color RGB */
+  padding-bottom: 1.5rem; /* Espaciado opcional para separar la línea del texto */
+  width: 100%;
+}
+.politica-content-1, .politica-content-2 {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+}
+.politica-content-2 p span{
+  font-weight: bold;
+}
+
+.politica-contenido {
+  display: flex;  
+}
+
+  .politica-content-1 p, 
+  .politica-content-2 p{
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .close-button{
+    margin-right: 5rem;
+  }
+  .close-button-final{
+    margin-left: 2rem;
+    width: 93px;
+    height: 38px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.262);
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .close-button-final:hover {
+    background-color: rgba(0, 0, 0, 0.353);
+  }
+
+@media (max-width: 768px) {
+  .politica-contenido {
+    flex-direction: column;
+  }
+
+  .politica-content-1,
+  .politica-content-2 {
+    width: auto;
+  }
+ 
+}
+
+
+
+
+

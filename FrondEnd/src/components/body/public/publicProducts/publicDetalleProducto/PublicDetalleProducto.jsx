@@ -1,22 +1,44 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useApi } from '../../../../../context/ApiContext';
 import './PublicDetalleProducto.css';
 import { GrGallery } from 'react-icons/gr';
+import { TfiBook } from "react-icons/tfi";
+import { GoShareAndroid } from "react-icons/go";
 import AllGalleryByProduct from './allGalleryByProduct/allGalleryByProduct/AllGalleryByProduct';
+import PoliticasProducto from '../publicDetalleProducto/politicasProducto/PoliticasProducto';
+import RedesProducto from '../publicDetalleProducto/redesProducto/RedesProducto';
 
 const PublicDetalleProducto = () => {
   const { id } = useParams();
   const { fetchProductById } = useApi();
   const [product, setProduct] = useState(null);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-
+  const [isPoliticasOpen, setIsPoliticasOpen] = useState(false);
+  const [isShareOpen, setIsShareOpen] = useState(false);
+  
   const openGallery = () => {
     setIsGalleryOpen(true);
   };
 
   const closeGallery = () => {
     setIsGalleryOpen(false);
+  };
+  
+  const openPoliticas = () => {
+    setIsPoliticasOpen(true);
+  };
+
+  const closePoliticas = () => {
+    setIsPoliticasOpen(false);
+  };
+  
+  const openShare = () => {
+    setIsShareOpen(true);
+  };
+
+  const closeShare = () => {
+    setIsShareOpen(false);
   };
 
   useEffect(() => {
@@ -39,7 +61,10 @@ const PublicDetalleProducto = () => {
           <div className='name-atras'>
             <p className='text-detalle-name'>{product.name}</p>
             <p className="pagination">
-              <Link to="/">« Atras</Link>
+              <Link to="/">« Atras</Link>                  
+              
+              <a  href="#" onClick={openShare} style={{ color: '#000000', fontWeight: 'bold'}}><GoShareAndroid /></a>
+
             </p>
           </div>
           <section className="container-detalles-fotos">
@@ -86,12 +111,15 @@ const PublicDetalleProducto = () => {
           <section className='contenedor-galeria-precio'>
             <p className='precio-detalle'>
               Precio: ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
-              <span className='spam-precio'> por día</span></p>
-                <p className='contenedor-galeria'>
-                  <GrGallery />
-                  <a href="#" onClick={openGallery} style={{ color: '#000000', fontWeight: 'bold'}}>Ver más</a>
-                </p>
-          </section>
+              <span className='spam-precio'> por día</span>
+            </p>
+            <p className='contenedor-galeria'>            
+              <GrGallery />
+              <a href="#" onClick={openGallery} style={{ color: '#000000', fontWeight: 'bold'}}>Ver más</a>
+              <TfiBook />
+              <a  href="#" onClick={openPoliticas} style={{ color: '#000000', fontWeight: 'bold'}}>Politicas</a>
+            </p>            
+          </section>          
           <section className='descripcion-detalle-principal'>
             <p className='description-detalle'>Descripción:</p>
             <p className='descriptio-texto'>{product.description}</p>
@@ -101,6 +129,8 @@ const PublicDetalleProducto = () => {
         <p>Cargando detalles del producto...</p>
       )}
       {isGalleryOpen && <AllGalleryByProduct onClose={closeGallery} />}
+      <PoliticasProducto isOpen={isPoliticasOpen} onRequestClose={closePoliticas} />
+      <RedesProducto isOpen={isShareOpen} onRequestClose={closeShare} />   
     </div>
   );
 };

@@ -111,16 +111,14 @@ export const ApiProvider = ({ children }) => {
 
 
 
-  useEffect(() => {
+   useEffect(() => {
     const fetchProductos = async () => {
       try {
         const response = await fetch('http://localhost:8081/api/admin/products');
-        if (response.ok) {
-          const data = await response.json();
-          setProductos(data);
-        } else {
-          setError('Error fetching product data');
-        }
+        const data = await response.json();
+        random
+        setProductos(data);
+        
       } catch (error) {
         setError('Error fetching product data');
       } finally {
@@ -129,7 +127,7 @@ export const ApiProvider = ({ children }) => {
     };
 
     fetchProductos();
-  }, []);
+  }, []); 
 
   const deleteProduct = async (id) => {
     try {

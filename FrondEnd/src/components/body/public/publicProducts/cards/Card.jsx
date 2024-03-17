@@ -4,13 +4,30 @@ import { Link } from 'react-router-dom';
 import './card.css';
 
 const Card = ({ selectedCategories }) => {
-  const { productos } = useApi();
   const [currentPage, setCurrentPage] = useState(1);
+  const [products, setProducts] = useState([])
   const [productosPerPage, setProductosPerPage] = useState(10);
   const [currentProductos, setCurrentProductos] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
+
+  const fetchProductos = async () => {
+    const response = await fetch('http://localhost:8081/api/admin/products');
+    const data = await response.json();
+    setProducts(data)      
+    setIsLoading(false)
+  };
 
   useEffect(() => {
-    const filteredProductos = productos.filter(
+    fetchProductos()
+  }, [])
+  
+  useEffect(() => {
+    if(products.length === 0) return
+
+
+    const randomSortedProducts = [...products].sort(() => Math.random() - 0.5);
+
+    const filteredProductos = randomSortedProducts.filter(
       producto =>
         selectedCategories.length === 0 ||
         selectedCategories.some(category => category.id === producto.categoryName)
@@ -22,9 +39,9 @@ const Card = ({ selectedCategories }) => {
     const productosForPage = filteredProductos.slice(indexOfFirstProducto, indexOfLastProducto);
 
     setCurrentProductos(productosForPage);
-  }, [currentPage, productos, productosPerPage, selectedCategories]);
+  }, [currentPage, products, productosPerPage, selectedCategories]);
 
-  const totalProductos = productos
+  const totalProductos = products
     .filter(producto => selectedCategories.length === 0 || selectedCategories.some(category => category.id === producto.categoryName))
     .length;
 
@@ -46,6 +63,7 @@ const Card = ({ selectedCategories }) => {
     <div>
       <h2 className='text-title-card'>Instrumentos Recomendados: {totalProductos}</h2>
       <div className="recomendados"></div>
+      {isLoading && <span>Cargando...</span>}
       <div className="productos-container">
         {currentProductos.map((producto, index) => (
           <div key={`${producto.id}-${index}`} className="producto-card">

@@ -63,6 +63,7 @@ const PublicDetalleProducto = () => {
             <p className="pagination">
               <Link to="/">« Atras</Link>                  
               
+             
               <a  href="#" onClick={openShare} style={{ color: '#000000', fontWeight: 'bold'}}><GoShareAndroid /></a>
 
             </p>
@@ -114,10 +115,10 @@ const PublicDetalleProducto = () => {
               <span className='spam-precio'> por día</span>
             </p>
             <p className='contenedor-galeria'>            
-              <GrGallery />
-              <a href="#" onClick={openGallery} style={{ color: '#000000', fontWeight: 'bold'}}>Ver más</a>
-              <TfiBook />
-              <a  href="#" onClick={openPoliticas} style={{ color: '#000000', fontWeight: 'bold'}}>Politicas</a>
+              
+              <a href="#" onClick={openGallery} style={{ color: '#000000', fontWeight: 'bold'}}><GrGallery /> Ver más</a>
+              
+              <a  href="#" onClick={openPoliticas} style={{ color: '#000000', fontWeight: 'bold'}}><TfiBook /> Politicas</a>
             </p>            
           </section>          
           <section className='descripcion-detalle-principal'>

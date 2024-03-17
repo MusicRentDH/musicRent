@@ -1,0 +1,135 @@
+.container-redes {
+  position: fixed;
+  font-size: 1rem;
+  top: 3rem; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  margin: 8rem 45rem;
+  max-width: calc(100% - 90rem);   
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+}
+.redes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(213, 218, 229); 
+  padding-bottom: 1rem; 
+}
+.redes-header a {  
+  font-size: 2rem;
+  margin: 0;
+}
+.container-producto{
+  display: flex;
+}
+.container-imagen{
+  align-items: center;
+  display:flex;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  height: auto;   
+}
+.container-imagen img{
+  max-width: 100%;
+  height: auto;
+}
+.container-detalle-producto{
+  display: flex;
+  padding: 2rem;
+  margin-left: 4rem;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto; 
+}
+.detalle-producto h2{ 
+  margin-bottom: 4rem;
+}
+.detalle-descripcion{
+  text-align: left;
+}
+.botones{  
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.redes-compartir h2{
+  border-bottom: 1px solid rgb(213, 218, 229); 
+  padding-bottom: 1rem; 
+  margin-bottom: 3rem;
+}
+.fb,
+.x,
+.instagram { 
+  flex-grow: 1;
+  margin-right: 2rem; 
+}
+.redes-compartir button {  
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+  width: 100%;
+  cursor: pointer;
+  text-align: center;   
+}
+.instagram:last-child {
+  margin-right: 0; 
+}
+.redes-compartir button svg {
+  fill: 666666;
+  margin-right: 1rem;
+  font-size: 2rem;  
+}
+.botones .fb :hover {
+  background-color: #0055AA;
+}
+.botones .x :hover {
+  background-color: #0E162D; 
+}
+.botones .instagram :hover {
+  background-color: #9224B8; 
+}
+.botones button:hover svg {
+  fill: white; 
+}
+.botones button:hover {  
+  color: white; 
+}
+.link-producto{
+  margin-top: 2rem;
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);   
+  border-radius: 3rem;
+}
+.link-producto input{
+  flex: 1;
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-top-left-radius: 3rem; 
+  border-bottom-left-radius: 3rem;    
+}
+.link-producto button{
+  margin: 0.5rem 1rem;
+  background-color: #FDA310;
+  color: #FFFFFF;
+  padding: 1rem 3rem;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.3rem;
+}
+@media only screen and (max-width: 480px) {
+  .div {
+    width: 10vh;
+  }
+}
+
+  

@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 import { TfiBook } from "react-icons/tfi";
 import './PoliticasProducto.css';
 
+Modal.setAppElement('#root');
+
 const PoliticasProducto = ({ isOpen, onRequestClose }) => {
   return (
     <Modal className='modal-container'
@@ -15,9 +17,7 @@ const PoliticasProducto = ({ isOpen, onRequestClose }) => {
     
 
         <h2><TfiBook /> Políticas del Producto</h2>
-        {/* <button className="close-button" onClick={onRequestClose}>
-        <IoCloseSharp />
-        </button> */}
+       
       
       <div className='politica-contenido'>
       <section className='politica-content-1'>

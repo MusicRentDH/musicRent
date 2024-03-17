@@ -10,7 +10,7 @@
 
    function Footer() {
       return (
-         <footer>
+         <footer style={{flexShrink: 0}}>
             <div className="container-footer"> 
                <p className='logo'><img  src={logo} alt="Logo" /></p>
                <p className='Copy'>&copy; 2024 Copyright.MusicRent</p>

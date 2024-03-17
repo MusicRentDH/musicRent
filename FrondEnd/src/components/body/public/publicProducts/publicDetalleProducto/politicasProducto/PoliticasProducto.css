@@ -3,14 +3,14 @@
   font-size: 1.5rem;
   margin-top: 2rem; 
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-  backdrop-filter: blur(5px); /* Desenfoque del fondo */
+  backdrop-filter: blur(5px); /* Desenfoque del fondo */  
 }
 .politicas-header {
   margin: 8rem 10rem;
   background-color: white;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 .politicas-header h2{
   padding: 2rem;
@@ -27,45 +27,57 @@
 .politica-content-2 p span{
   font-weight: bold;
 }
-
 .politica-contenido {
   display: flex;  
 }
-
-  .politica-content-1 p, 
-  .politica-content-2 p{
-    text-align: left;
-    margin-bottom: 1rem;
+.politica-content-1 p, 
+.politica-content-2 p{
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.close-button-final{
+  margin-left: 2rem;
+  width: 93px;
+  height: 38px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.262);
+  font-size: 20px;
+  cursor: pointer;
+}
+.close-button-final:hover {
+  background-color: rgba(0, 0, 0, 0.353);
+}
+@media only screen and (max-width: 480px) {
+  .div {
+    width: 10vh;
   }
-
-  .close-button{
-    margin-right: 5rem;
+  .modal-container {
+    margin-top: -17rem; /* Ajuste del margen superior */
+    font-size: 1rem; /* Reducción del tamaño de fuente */
+  }  
+  
+  .politicas-header {
+    margin: 2rem; /* Reducción de márgenes para pantallas más pequeñas */
+    padding: 1rem; /* Reducción del padding */
   }
-  .close-button-final{
-    margin-left: 2rem;
-    width: 93px;
-    height: 38px;
-    border-radius: 20px;
-    border: none;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.262);
-    font-size: 20px;
-    cursor: pointer;
+  
+  .politicas-header h2 {
+    padding: 1rem; /* Reducción del padding */
+    width: 90%;
   }
-  .close-button-final:hover {
-    background-color: rgba(0, 0, 0, 0.353);
+  
+  .politica-content-1, .politica-content-2 {
+    padding: 1rem; /* Reducción del padding */
   }
-
-@media (max-width: 768px) {
-  .politica-contenido {
-    flex-direction: column;
+  
+  .close-button-final {
+    margin-left: 1rem; /* Ajuste del margen */
+    width: 72px; /* Reducción del ancho */
+    height: 30px; /* Reducción del alto */
+    font-size: 16px; /* Reducción del tamaño de fuente */
   }
-
-  .politica-content-1,
-  .politica-content-2 {
-    width: auto;
-  }
- 
 }
 
 

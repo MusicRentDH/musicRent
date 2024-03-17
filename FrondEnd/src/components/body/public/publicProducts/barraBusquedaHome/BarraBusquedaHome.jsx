@@ -85,7 +85,7 @@ const BarraBusquedaHome = ({ onCategoryChange }) => {
             </div>
           </div>
         </div>
-      )}
+      )}    
     </div>
   );
 };

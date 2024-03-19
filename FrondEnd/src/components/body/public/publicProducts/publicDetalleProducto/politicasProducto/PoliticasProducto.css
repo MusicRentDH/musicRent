@@ -1,4 +1,6 @@
-.modal-container {
+*{
+  margin-left: 0;
+}.modal-container {
   position: fixed;
   font-size: 1.5rem;
   margin-top: 2rem; 
@@ -13,7 +15,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 .politicas-header h2{
-  padding: 2rem;
+  padding: 2rem;  
   border-bottom: 1px solid rgb(213, 218, 229); /* Línea sólida de 1 píxel de grosor y color RGB */
   padding-bottom: 1.5rem; /* Espaciado opcional para separar la línea del texto */
   width: 100%;
@@ -29,11 +31,17 @@
 }
 .politica-contenido {
   display: flex;  
+  text-align: left;
 }
 .politica-content-1 p, 
 .politica-content-2 p{
   text-align: left;
   margin-bottom: 1rem;
+}
+.politica-content-1 h2, 
+.politica-content-2 h2{
+  text-align: left;
+
 }
 .close-button-final{
   margin-left: 2rem;

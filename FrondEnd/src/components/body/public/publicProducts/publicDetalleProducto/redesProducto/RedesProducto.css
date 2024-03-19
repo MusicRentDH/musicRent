@@ -52,6 +52,22 @@
 .detalle-descripcion{
   text-align: left;
 }
+.mensaje-input p{
+  font-size: 1.3rem;
+  text-align: left;
+  margin-bottom: 1rem;  
+}
+.mensaje-input input{
+  margin-bottom: 1rem;
+  height: 3rem;
+  border-radius: 1rem;
+  border: none;
+  border-style: inside;
+  border: 1px solid rgb(213, 218, 229); 
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  width: 100%;  
+}
 .botones{  
   display: flex;
   align-items: center;
@@ -61,11 +77,11 @@
 .redes-compartir h2{
   border-bottom: 1px solid rgb(213, 218, 229); 
   padding-bottom: 1rem; 
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
 }
 .fb,
 .x,
-.instagram { 
+.whatsapp { 
   flex-grow: 1;
   margin-right: 2rem; 
 }
@@ -74,12 +90,11 @@
   font-size: 1.5rem;
   border-radius: 1rem;
   border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
   width: 100%;
   cursor: pointer;
   text-align: center;   
 }
-.instagram:last-child {
+.whatsapp:last-child {
   margin-right: 0; 
 }
 .redes-compartir button svg {
@@ -93,8 +108,8 @@
 .botones .x :hover {
   background-color: #0E162D; 
 }
-.botones .instagram :hover {
-  background-color: #9224B8; 
+.botones .whatsapp :hover {
+  background-color: #25D366; 
 }
 .botones button:hover svg {
   fill: white; 

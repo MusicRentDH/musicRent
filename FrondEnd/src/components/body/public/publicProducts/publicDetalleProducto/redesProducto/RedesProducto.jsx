@@ -4,13 +4,14 @@ import { useParams } from 'react-router-dom';
 import { useApi } from '../../../../../../context/ApiContext'; 
 import { IoCloseSharp } from "react-icons/io5";
 import { BsTwitterX } from "react-icons/bs";
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaWhatsapp, FaCheck } from 'react-icons/fa';
 import './RedesProducto.css';
 
 const RedesProducto = ({ isOpen, onRequestClose }) => {
   const { id } = useParams();
   const { fetchProductById } = useApi(); 
   const [product, setProduct] = useState(null);
+  const [message, setMessage] = useState('');
   const [linkCopied, setLinkCopied] = useState(false);
 
   useEffect(() => {
@@ -26,23 +27,28 @@ const RedesProducto = ({ isOpen, onRequestClose }) => {
     getProductDetails();
   }, [id, fetchProductById]);
 
-  const shareOnFacebook = () => {
-    const urlfacebook = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-    window.open(urlfacebook); 
-    onRequestClose(); 
-  };  
+  useEffect(() => {   
+    if (!isOpen) {
+      setMessage('');
+    }
+  }, [isOpen]);
 
-  const shareOnInstagram = () => {
-    const url = `https://www.instagram.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
-    window.open(url); 
-    onRequestClose(); 
-  };
-  
+   /* const shareOnFacebook = () => {
+    const facebookMessage = encodeURIComponent(`${message} ${window.location.href}`);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&quote=${facebookMessage}`);
+    onRequestClose(); // Cierra el modal después de compartir
+  };     */ 
 
   const shareOnTwitter = () => {
-    const tweetText = encodeURIComponent('Mira este fantástico instrumento de MusicRent'); 
-    const urltwitter = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${tweetText}`; 
-    window.open(urltwitter); 
+    const twitterMessage = encodeURIComponent(`${message} ${window.location.href}`);
+    window.open(`https://twitter.com/intent/tweet?text=${twitterMessage}`);
+    onRequestClose(); // Cierra el modal después de compartir
+  };
+
+  const shareOnWhatsapp = () => {
+    const whatsappMessage = encodeURIComponent(`${message} ${window.location.href}`);
+    window.open(`https://api.whatsapp.com/send?text=${whatsappMessage}`);
+    onRequestClose(); // Cierra el modal después de compartir
   };
 
   const handleCloseModal = () => {
@@ -95,15 +101,23 @@ const RedesProducto = ({ isOpen, onRequestClose }) => {
 </div>
       <div className="redes-compartir">
         <h2>Compartir Producto</h2>
+        <div className="mensaje-input">
+          <p>Comentario</p>
+        <input 
+          type="text"         
+          value={message} 
+          onChange={(e) => setMessage(e.target.value)} 
+        />
+        </div>
         <div className='botones'>
-          <div className='fb'>
+          {/* <div className='fb'>
             <button onClick={shareOnFacebook}><FaFacebookF /> Facebook</button>
-          </div>
+          </div> */}
           <div className='x'>
             <button onClick={shareOnTwitter}><BsTwitterX /> X (Twitter)</button>
           </div>
-          <div className='instagram'>
-            <button onClick={shareOnInstagram}><FaInstagram /> Instagram</button>
+          <div className='whatsapp'>
+            <button onClick={shareOnWhatsapp}><FaWhatsapp /> Whatsapp</button>
           </div>
         </div>
       </div>

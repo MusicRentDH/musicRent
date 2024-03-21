@@ -1,0 +1,200 @@
+/* Estilos para el componente de Comentarios */
+
+.valoraciones-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+  
+ .titulo-boton{
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+ } 
+
+  .comentar-button {
+    background-color: #dddddd; /* Color de fondo del botón */
+    color: #2c2c2c; /* Color del texto del botón */
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .comentar-button:hover {
+    background-color: #000000;
+    color: #ffffff; /* Color de fondo del botón */
+  }
+  
+  .hr-clara {
+    border: none;
+    border-top: 1px solid #e7e7e7; /* Color de la línea horizontal */
+    margin: 20px 0;
+  }
+  
+
+  .subtitulos-detalle-valoracion {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .puntuacion-general {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .puntuacion-promedio {
+    margin-left: 10px;
+  }
+  
+  .valoracion {
+    margin-top: 10px;
+  }
+  
+  .valoracion-estrellas{
+    display: flex;
+    align-items: center;
+  }
+
+  .nombre-fecha{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .usuario {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .fecha {
+    color: #666; /* Color del texto de la fecha */
+    display: flex;
+    align-items: center;
+    }
+
+    .icon-calendar {
+    margin-right: 15px;
+    }
+  
+  .comentario {
+    margin-top: 10px;
+    text-align: left;
+  }
+
+
+/* M O D A L*/
+
+  .Modal {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    overflow-y: auto;
+    z-index: 1000;
+    position: fixed;
+    text-align: left !important;
+  }
+  
+  
+  h3.titulo-comentar{
+    text-align: left;
+    justify-content: left;
+  }
+
+  .titulo-comentario{
+    text-align: left;
+    margin-top: 15px;
+  }
+
+  .text-area{
+   text-align: left;
+   width: 100%;
+   border-radius: 5px;
+   border-color: #66666618;
+   height: 70px;
+   font-size: 12px;
+   font-family: 'Montserrat', sans-serif !important;
+   margin-top: 10px;
+   margin-bottom: 15px;
+   padding-left: 10px;
+  }
+
+  .botones-comentario {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .boton-guardar{
+    border: none;
+    cursor: pointer;
+    width: 93px;
+    height: 38px;
+    border-radius: 20px;
+    background-color: #FDA310;
+    color: white;
+    font-size: 16px;
+  }
+
+  .boton-cancelar {
+    border: none;
+    cursor: pointer;
+    width: 93px;
+    height: 38px;
+    border-radius: 20px;
+    background-color: #121212ad;
+    color: white;  
+    font-size: 16px; 
+  }
+  
+  .boton-guardar:hover {
+    background-color: rgb(229, 79, 19);
+  }
+  .boton-cancelar:hover {
+    background-color: #121212e8;
+  }
+  
+  @media (max-width: 768px) {
+   
+    .valoraciones-container {
+      margin-right: 0rem;
+      margin-left: 0rem;
+    }
+
+    h2{
+      margin-left: 0%;
+    }
+
+    .puntuacion-general{
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      align-items: flex-start;    
+    }
+
+
+
+    .nombre-fecha{
+      flex-direction: column;
+    }
+
+    .usuario {
+      margin-bottom: 15px;
+    }
+
+    /* M O D A L*/
+
+    .Modal {
+      width: 90%;
+      margin-top: 40px;
+    }
+}

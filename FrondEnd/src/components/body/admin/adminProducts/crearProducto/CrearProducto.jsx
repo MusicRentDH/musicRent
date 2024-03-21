@@ -14,20 +14,35 @@ const CrearProducto = () => {
   const [image, setImage] = useState(null);
   const [validationErrors, setValidationErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [selectedFeatures,setSelectedFeatures]=useState('');
+  const [features, setFeatures] = useState([]);
 
   useEffect(() => {
     fetchCategories();
+    fetchFeatures();
   }, []);
+
 
   const fetchCategories = async () => {
     try {
       const response = await fetch('http://localhost:8081/api/admin/list');
       const data = await response.json();
-      setCategories(data);
+      setCategories(data); 
     } catch (error) {
       console.error('Error fetching categories:', error);
     }
   };
+  
+  const fetchFeatures = async () => {
+    try {
+      const response = await fetch('http://localhost:8081/api/admin/features');
+      const data = await response.json();
+      setFeatures(data); 
+    } catch (error) {
+      console.error('Error fetching features:', error);
+    }
+  };
+  
 
   const validateForm = () => {
     const errors = {};
@@ -49,6 +64,9 @@ const CrearProducto = () => {
     } else if (isNaN(price) || parseFloat(price) <= 0) {
       errors.price = 'El precio debe ser un número mayor que cero';
     }
+    if(!selectedFeatures){
+      errors.selectedFeatures='Campo obligatorio';
+    }
 
     if (!image) {
       errors.image = 'Campo obligatorio';
@@ -69,6 +87,7 @@ const CrearProducto = () => {
       formDataObject.append('categoryId', selectedCategory);
       formDataObject.append('price', price);
       formDataObject.append('images', image);
+      formDataObject.append('features',selectedFeatures)
 
       console.log('Datos que se enviarán a la API:', {
         name: instrumentName,
@@ -76,6 +95,7 @@ const CrearProducto = () => {
         categoryId: selectedCategory,
         price: price,
         image: image,
+        features: selectedFeatures
       });
 
       try {
@@ -164,6 +184,24 @@ const CrearProducto = () => {
             )}
           </div>
           <div className="form-group">
+        <label htmlFor="caracteristicaInstrumento">Característica del Instrumento</label>
+        <select
+          id="caracteristicaInstrumento"
+          value={selectedFeatures}
+          onChange={(e) => setSelectedFeatures(e.target.value)}
+        >
+          <option value="">Seleccione una característica</option>
+          {features.map((feature) => ( // Usando el estado features para mapear las opciones
+            <option key={feature.id} value={feature.id}>
+              {feature.name}
+            </option>
+          ))}
+        </select>
+        {validationErrors.selectedFeatures && (
+          <p className="error-message">{validationErrors.selectedFeatures}</p>
+        )}
+      </div>
+          <div>
             <label htmlFor="archivoInstrumento">Subidor de Archivos</label>
             <input
               type="file"

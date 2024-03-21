@@ -17,6 +17,8 @@ const AdminFeatures = () => {
 
   const navigate = useNavigate();
 
+  
+
   const handleDeleteClick = (id, name, icon) => {
     setConfirmDelete({ id, name, icon });
   };
@@ -43,17 +45,15 @@ const AdminFeatures = () => {
   const columns = [  
     {
         name: "Icono",
-        selector: (row) => row.icon[0].imageData,
-      cell: ({ icon }) => (
-        <div className="image-column">
-          {icon && icon.length > 0 && (
-            <img
-              src={`data:image/jpeg;base64,${icon[0].imageData}`}
-              alt="Imagen"
-              style={{ width: '50px' }}
-            />
-          )}
-        </div>
+        selector: 'icon',
+      cell: (row) => (
+        row.icon && (
+          <img
+            src={`data:image/svg+xml;base64,${row.icon}`} 
+            alt={`Imagen de la categoría ${row.name}`}
+            style={{ width: '50px' }}
+          />
+        )
       ),
     },
       
@@ -72,6 +72,9 @@ const AdminFeatures = () => {
       cell: CustomActionsCell,
     },
   ];
+
+  
+
   return (
     <div className="table-container">
       <h1 className="text-admin-products">Permite añadir o quitar características</h1>

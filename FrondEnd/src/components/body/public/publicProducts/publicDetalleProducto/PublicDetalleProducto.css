@@ -1,283 +1,407 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-p{
-    margin: 0;
-    padding: 0;  
-}
+
 .container_principal_detalle{
     margin-top: 150px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-bottom: 80px;
+    margin-right: 3rem;
+    margin-left: 3rem;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* sección general de la pagina Detalle del producto*/
+.detalle-producto {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* sección nombre producto y atras*/
 .name-atras{
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    position: relative;
+    justify-content: space-between;  
+}
+
+/*hijo de .name-atras*/
+.text-detalle-name {
+    text-align: left;
+    font-size: 30px;
+    width: 50%;
+    margin: 0%;
+    justify-content: left !important;
+}
+
+/*hijo de .name-atras*/
+.link-gris {
+    color: rgba(0, 0, 0, 0.792);
+    text-align: right;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+
+/*imagenes y textos*/
+
+.imagenes-descripcion {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+/*container las 5 fotos y ver mas*/
+.container-detalles-fotos{
+    display: flex;
+    padding-right: 10px;
+    width: 50%;
+}
+
+
+/*img izquierda*/
+.container-detalle-izquierda{
+    display:flex;
+    box-sizing: border-box;
+    height: auto; /* Alto relativo*/
+    width: 50%;
+}
+
+.img-1{
+    width: 100%;
+    height: 400px;
+    box-shadow: 6px 6px 10px 1px rgb(221, 221, 223);
+    border-radius: 10px;
+}
+
+
+/*imgs derechas*/
+.container-detalle-derecha {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    justify-content: space-between;
+}
+
+.imagenes-derecha {
+    display: flex;
+    flex-direction: column;
     
 }
 
-@media (max-width: 768px) {
-    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
-    .name-atras {
-      flex-direction: row; /* Puedes ajustar esto según tus necesidades */
-      /*flex-direction:column-reverse;*/
-    }
-  }
-/*hijo de .name-atras*/
-.text-detalle-name {
-    font-family: 'poppins';
-    font-size: calc(1em + 1vw);
-    color:black;
-    font-weight: bold;
-    margin-left: 0px;
-    margin-right: 0;
-    width: 100%;
-}
-
-/*hijo de .name-atras*/
-.pagination {
-    margin-right: 2px;
-    font-family: 'Poppins';
-    font-size: calc(1em + 1vw);
-    text-align: right;
-    align-items: right;
-    width: 100%;
-}
-
-.container-detalles-fotos{
-    position: relative;
+.img2-3, .img4-5 {
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
-
-@media (max-width: 576px) {
-    .container-detalles-fotos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding: 0;
-    }
-  }
-
-.container-detalle-izquierda{
-    display:flex;
-    padding: 20px;
-    box-sizing: border-box;
-    width: 90%;/* Ocupa todo el ancho del contenedor principal */
-    height: auto; /* Alto relativo*/
-}
-
-/*@media (max-width: 576px) {
-    .container-detalle-izquierda {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        padding: 0;
-        width: 90%;
-        height:auto;
-    }
-  }*/
-
-.container-detalle-derecha {
-    width: 975px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(2, 1fr); 
-    gap: 10px;
-}
-
-@media (max-width: 576px) {
-    .container-detalle-derecha {
-        flex-direction: column;
-    }
-  }
-
-.img-1{
-    margin-top: 20px;
-    margin: 20px 20px;
-    width: 80%;
-    height: 90%;
-    padding: 20px;
-    box-shadow: 6px 6px 10px 0px gray;
-    border-radius: 10px;
-    width: 50vmin;
-}
-
-@media (max-width: 768px) {
-    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
-    .img-1 {
-        width: 100%;
-    }
-  }
-
-  /*@media (max-width: 576px) {
-    .img-1 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-  }*/
 
 .img-2, .img-3, .img-4, .img-5 { 
+    width: 48%;
+    height: 176px;
     border-radius: 10px; 
-    padding: 10px;
-    width: 80%;
-    flex: 2 2 auto;
-    font-family: "poppins";
-    margin: 10px 5px 10px 10px;
-    box-shadow: 6px 6px 10px 0px gray;
-    padding: 10px;
+    box-shadow: 6px 6px 10px 1px rgb(221, 221, 223);
     align-content: center; /* Añade relleno opcional para espacio interno */
 }
 
-/*@media (max-width: 576px) {
-    .img-2, .img-3, .img-4, .img-5 {
-        display: none;
-    }
-  }*/
 
-
-/*sección precio y galeria del ver más*/
-.contenedor-galeria-precio{
-    display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    position: relative;
+/*galeria del ver más*/
+.contenedor-galeria{
+    color: rgba(0, 0, 0, 0.792);
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
 }
 
-/*hijo de seccion precio y galeria del ver más*/
+
+
+
+/*container detalle estrellas, precio, descripcion politicas*/
+
+
+.container-estrellas-precio-descripcion-politicas {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    height: 400px;
+    justify-content: space-between;
+
+}
+
+.estrellas-redes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.icono-redes{
+    color: rgba(0, 0, 0, 0.792);
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
 .precio-detalle{
     color: #E54E13;
-    font-size: calc(1em + 1vw);
+    font-size: 26px;
     text-align: left;
     line-height: normal;
-    flex: 2;
-    width: 100%;
     margin-left: 0px;
-    position: relative;
+    margin-bottom: 0px;
 }
 
-@media (max-width: 768px) {
-    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
-    .precio-detalle {
-        font-size: 0.9em;
-    }
-  }
-  @media (max-width: 576px) {
-    .precio-detalle {
-        font-size: 0.7em;
-    }
-  }
-
-/*hijo de seccion precio y galeria del ver más*/
 .spam-precio{
-    font-size: calc(0,5em + 0,5vw);
+    font-size: 14px;
     opacity: 0.9;
     align-items: center;
     text-align: left;
     vertical-align: middle;
 }
 
-@media (max-width: 768px) {
-    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
-    .spam-precio {
-        font-size: 0.7em;
-    }
-  }
 
-/*hijo de seccion precio y galeria del ver más*/
-.contenedor-galeria{
-    
-    font-family: 'Poppins';
-    font-size: calc(1em + 1vw); 
-    text-align: right;
-    padding-right: 2%;
-    width: 100%;
-    align-items: right;
-    margin-right: 0px;
-    flex: 1;
-}
-
-@media (max-width: 768px) {
-    /* Estilos específicos para pantallas más pequeñas (ej. dispositivos móviles) */
-    .contenedor-galeria {
-        font-size: 0.9em;
-    }
-  }
-  @media (max-width: 576px) {
-    .contenedor-galeria {
-        font-size: 0.7em;
-    }
-  }
-
-/*sección descripción destalle principal*/
+/*sección descripción detalle principal*/
 .descripcion-detalle-principal{
     display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    position: relative;
-    justify-content: space-between;
-    align-content: center;
     flex-direction: column;
+    text-align: left;
+    margin-bottom: 0px;
 }
-
-/* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .descripcion-detalle-principal {
-      flex-direction: column; /* Cambia a disposición de columna en pantallas más pequeñas */
-      align-items: center; /* Centra los elementos en pantallas más pequeñas */
-    }
-  }
 
   /*hijo de descripción detalle principal*/
-.description-detalle{
-    display: flex;
+.descripcion-detalle{
+    font-size: 20px;
     text-align: left;
-    font-family: 'Poppins';
-    font-size: calc(1em + 1vw);
-    flex-direction: column;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-bottom: 8px;
 }
+
+/*hijo de descripción detalle principal*/
+.descripcion-texto{
+    font-size: 18px;
+    text-align: left;
+    line-height: 22px;
+}
+
+
+/*boton reservas*/
+
+.boton-reserva-usuario{
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 38px;
+    border-radius: 20px;
+    background-color: #FDA310;
+    color: white;
+    font-size: 16px;
+  }
+
+  .boton-reserva-usuario:hover {
+    background-color: rgb(229, 79, 19);
+  }
+
+
+/*politicas*/
+
+.politicas {
+    display: flex;
+    align-items: center;
+}
+
+.icono-politicas {
+  font-size: 30px;
+  margin-right: 10px;  
+}
+
+.texto-politicas {
+    color: rgba(0, 0, 0, 0.792);
+    text-align: left;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.link-politicas {
+    color: rgba(0, 0, 0, 0.792);
+    text-align: left;
+    font-size: 14px;
+}
+
+.comentarios-componente {
+    margin-top: 30px;
+}
+
+.hr-oscura {
+    border: none;
+    border-top: 1px solid #7b7b7b; /* Color de la línea horizontal */
+    margin: 20px 0;
+}
+
+
+@media (max-width: 768px) {
+
+    .container_principal_detalle{
+        margin-right: 2rem;
+        margin-left: 2rem;
+
+    }
+
+    /*hijo de .name-atras*/
+    .text-detalle-name {
+        text-align: left;
+        font-size: 20px;
+        width: 75%;
+        margin: 0%;
+        justify-content: left !important;
+    }
+    
+        
+    .imagenes-descripcion {
+        display: flex;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    /*container las 5 fotos y ver mas*/
+    .container-detalles-fotos{
+        display: flex;
+        padding-right: 0px;
+        width: 100%;
+    }
+
+
+    /*img izquierda*/
+    .container-detalle-izquierda{
+        display:flex;
+        box-sizing: border-box;
+        height: auto; /* Alto relativo*/
+        width: 70%;
+    }
+
+    .img-1{
+        width: 100%;
+        height: 300px;
+        box-shadow: 6px 6px 10px 1px rgb(221, 221, 223);
+        border-radius: 10px;
+    }
+
+
+    /*imgs derechas*/
+    .container-detalle-derecha {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        justify-content: space-between;
+    }
+
+    .imagenes-derecha {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .img2-3, .img4-5 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 0px;
+    }
+
+    .img-2, .img-3, .img-4, .img-5 { 
+        width: 100%;
+        height: 60px;
+        margin-bottom: 5px;
+        
+         /* Añade relleno opcional para espacio interno */
+    }
+
+
+
+
+
+    .container-estrellas-precio-descripcion-politicas {
+        width: 100%;
+        display: flex;
+        margin-top: 20px; 
+        height: 100%;
+        justify-content:flex-start;  
+        padding-left: 0%; 
+    }
+
+    .descripcion-detalle{
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 8px;
+        margin-top: 15px;
+    }
+
+    .descripcion-texto {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 15px;
+    }
+
+
+    .politicas {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+    
+    .icono-politicas {
+      font-size: 50px;
+      margin-right: 10px;  
+    }
+    
+    .texto-politicas {
+        color: rgba(0, 0, 0, 0.792);
+        text-align: left;
+        font-size: 16px;    
+    }
+    
+    .link-politicas {
+        font-size: 12px;
+    }
+  }
 
 /*hijo de descripción detalle principal*/
 .descriptio-texto{
     display: flex;
     font-size: calc(1em + 1vw);
     font-family: 'Poppins';
-    text-align: justify;
+    text-align: left;
     position: relative; 
     position: relative;
     flex-direction: column;
     margin-left: 0px;
     margin-right: 0px;
 }
+
+ul li{
+    list-style: none;
+}
+
+.lista-caracteristicas{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.descriptio-texto-caracteristica{
+    display: flex;
+    font-size: calc(0.7em + 1vw);
+    font-family: 'Poppins';
+    text-align: left;
+    position: relative; 
+    position: relative;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.lista-caracteristicas-items{
+    display: flex;
+    align-items: center;
+}
+
 
 

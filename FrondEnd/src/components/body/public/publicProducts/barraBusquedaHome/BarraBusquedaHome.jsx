@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './BarraBusquedaHome.css';
 import imagen from '../../../../../assets/BarraBusquedaHome/Chica-guitarra.png';
 import { IoIosArrowDropdown } from "react-icons/io";
+import Calendario from '../calendario/Calendario'
+import SearchBar from '../searchBar/SearchBar'
 
 const BarraBusquedaHome = ({ onCategoryChange }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -45,13 +47,8 @@ const BarraBusquedaHome = ({ onCategoryChange }) => {
         <p className='text-barra'>Busca el instrumento que deseas rentar al mejor precio</p>
         <div className='busqueda-buton'>
           <div className='input-container'>            
-            <input
-              className='input-barra'
-              type="text"
-              placeholder='Guitarra Electrica'
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+            <SearchBar/>
+            <Calendario className="calendar-section" />
             <button className='dropdown' onClick={() => setModalOpen(true)}>
               Categoría <IoIosArrowDropdown className='icnn-drop-down' />
             </button>

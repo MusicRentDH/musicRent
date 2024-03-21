@@ -292,9 +292,68 @@ export const ApiProvider = ({ children }) => {
       return null;
     }
   };
+  const editFeature = async (formData, id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/features/${id}`, {
+        method: 'PUT',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Error editing feature');
+      }
+
+      const editedFeature = await response.json();
+      setProductos((prevCaracteristicas) => {
+        return prevCaracteristicas.map((caracteristica) => (caracteristica.id === id ? editedFeature : caracteristica));
+      });
+    } catch (error) {
+      setError('Error editing product');
+      throw error;
+    }
+  };
+
+  const fetchFeatureOfAProduct = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/products/${id}/features`);
+      if (response.ok) {
+        const feature = await response.json();
+        return feature;
+      } else {
+        setError('Error fetching feature by ID');
+        return null;
+      }
+    } catch (error) {
+      setError('Error fetching feature by ID');
+      return null;
+    }
+  };
+
+  const deleteCaracteristic = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setCategorias((prevCategorias) => prevCategorias.filter(categorias => categorias.id !== id));
+        
+        
+        return true
+      } else {
+        setError('Error deleting caracteristic');
+        return false
+      }
+    } catch (error) {
+      setError('Error deleting caracteristic');
+    }
+  };
 
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct, caracteristicas, deleteFeature, createFeature, fetchFeatureById  }}>
+    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct, caracteristicas, deleteFeature, editFeature, createFeature, fetchFeatureById, fetchFeatureOfAProduct, deleteCaracteristic  }}>
       {children}
     </ApiContext.Provider>
   );
@@ -303,3 +362,5 @@ export const ApiProvider = ({ children }) => {
 export const useApi = () => {
   return useContext(ApiContext);
 };
+
+

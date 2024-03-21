@@ -35,7 +35,7 @@ p.text-barra {
 }
 
 .input-barra {
-  width: 463px;
+  width: 463px !;
   height: 38px;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.411);
@@ -82,8 +82,8 @@ p.text-barra {
 /* Modal -categoras */
 .modal-categorias {
   position: absolute;
-  top: 42%;
-  left: 36%;
+  top: 36%;
+  left: 32.9%;
   transform: translate(-50%, -50%);
   width: 80%;
   max-width: 150px; /* Ajusta el ancho máximo según tus preferencias */
@@ -163,3 +163,22 @@ p.text-barra {
   }    
          
 }
+
+/* Estilos Calendario */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Esto distribuye los elementos igualmente */
+}
+
+.calendar-section {
+  flex-grow: 1; /* Permite que el calendario ocupe el espacio disponible */
+  margin: 0 10px; /* Añade un margen a los lados del calendario */
+}
+
+.input-barra {
+  flex-grow: 2; /* Permite que el input ocupe más espacio que el calendario */
+  margin-right: 10px; /* Añade un margen a la derecha del input */
+}
+
+

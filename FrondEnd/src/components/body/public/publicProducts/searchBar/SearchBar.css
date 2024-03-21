@@ -1,0 +1,41 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+div .input-container {
+  display: flex;
+  align-items: left;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.input-barra {
+  width: 463px;
+  height: 38px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.411);
+  padding-left: 20px;
+  border: none;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+
+
+
+@media (max-width: 767px) {
+
+  .input-barra {
+    width: 340px;
+  }
+ 
+  .input-container{
+    margin-top: 20px;
+  }    
+         
+}

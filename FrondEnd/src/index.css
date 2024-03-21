@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p, span, div {
   font-family: 'Montserrat', sans-serif;
+  
 }
 
 :root {
@@ -24,3 +25,14 @@ p, span, div {
   --negro: #000000; /* Negro */
   --amarillo: rgb(253, 163, 16); /* Amarillo en RGB */
 }
+
+/* Estilos de Calendario  */
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar los elementos horizontalmente */
+  justify-content: space-around; /* Distribuir espacio alrededor de los elementos */
+  gap: 20px; /* Espacio entre los elementos */
+}
+
+

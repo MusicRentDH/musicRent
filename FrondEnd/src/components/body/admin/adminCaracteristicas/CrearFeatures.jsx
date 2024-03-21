@@ -92,9 +92,9 @@ const CrearFeatures = () => {
             )}
           </div>
           <div className='botones-form'>
-            <button type="submit">Guardar</button>
+            <button className='boton-guardar-crear' id='boton-guardar-crear' type="submit">Guardar</button>
             <Link to="/admin/Administrar-Caracteristicas">
-              <button type="button" >Regresar</button>
+              <button type="button" id='boton-guardar-cerrar' >Regresar</button>
             </Link>
           </div>
         </form>

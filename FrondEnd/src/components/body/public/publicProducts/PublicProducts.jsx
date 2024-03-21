@@ -4,7 +4,6 @@ import Card from './cards/Card'
 import BarraBusquedaHome from './barraBusquedaHome/BarraBusquedaHome'
 import Categorias from './categorias/Categorias'
 
-
 const PublicProducts = () => {
 
   const [selectedCategories, setSelectedCategories] = useState([]);  
@@ -12,11 +11,10 @@ const PublicProducts = () => {
     setSelectedCategories(selectedCategories);
   };
 
-
   return (
     <>
       <BarraBusquedaHome onCategoryChange={handleCategoryChange} />
-      <Categorias />
+      <Categorias/>
       <Card selectedCategories={selectedCategories} />
     </>
   )

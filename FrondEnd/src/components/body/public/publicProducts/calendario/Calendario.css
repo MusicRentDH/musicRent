@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ffffff;
+}
+#root{
+  width: 100%;
+}
+#section {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.calendarElement {
+  display: flex;
+  width: inherit;
+}
+.calendar-wrap {
+  width: inherit;
+}
+.rdrMonths, .rdrMonthsHorizontal {
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 890px) {
+  #section {
+    display: flex;
+    flex-direction: column;
+  }
+  .calendarElement {
+    flex-direction: column;
+  }
+  .rdrDefinedRangesWrapper {
+    display: none;
+  }
+  .rdrMonths, .rdrMonthsHorizontal {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 425px) {
+  .rdrMonth {
+    display: none; /* Ocultar todos los meses primero */
+  }
+  .rdrMonth:first-child {
+    display: block; /* Mostrar solo el primer mes */
+  }
+}
+input{
+  max-width: 17rem;
+  height: 38px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.411);
+  padding-left: 20px;
+  border: none;
+  font-size: 20px;
+}
+.calendarWrap {
+  position: relative;
+}
+
+.calendar-wrap {
+  position: absolute;
+  top: 100%; /* Posiciona el calendario justo debajo del input */
+  
+}
+
+/* Solo muestra el calendario cuando `open` es verdadero */
+.calendarWrap.open .calendar-wrap {
+  display: block;
+}

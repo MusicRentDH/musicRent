@@ -1,24 +1,20 @@
 import { useState } from "react";
+import { useApi } from '../../../../../context/ApiContext';
 
 import "./SearchBar.css";
 
 const SearchBar = ({ setResults }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const { fetchProductsByName } = useApi();
+  
 
-  //cambiar y poner la Api de nosotros para llamar la lista de productos
   const fetchData = (value) => {
-    fetch("http://localhost:8081/api/admin/products")
-      .then((response) => response.json())
-      .then((json) => {
-        const results = json.filter((user) => {
-          return (
-            value &&
-            user &&
-            user.name &&
-            user.name.toLowerCase().includes(value)
-          );
-        });
+    fetchProductsByName(value)
+      .then((results) => {
         setResults(results);
+      })
+      .catch((error) => {
+        console.error('Error fetching product by name:', error);
       });
   };
 

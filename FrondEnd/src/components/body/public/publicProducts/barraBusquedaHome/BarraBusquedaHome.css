@@ -61,6 +61,8 @@ p.text-barra {
 
 .chica-guitarra {    
   margin-bottom: 35px;
+  margin-right: 2px ;
+  
 }
 .dropdown{
   display: flex;
@@ -82,8 +84,8 @@ p.text-barra {
 /* Modal -categoras */
 .modal-categorias {
   position: absolute;
-  top: 36%;
-  left: 32.9%;
+  top: 55%;
+  left: 54%;
   transform: translate(-50%, -50%);
   width: 80%;
   max-width: 150px; /* Ajusta el ancho máximo según tus preferencias */

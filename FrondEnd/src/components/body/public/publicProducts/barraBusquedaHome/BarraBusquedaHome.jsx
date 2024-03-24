@@ -3,7 +3,8 @@ import './BarraBusquedaHome.css';
 import imagen from '../../../../../assets/BarraBusquedaHome/Chica-guitarra.png';
 import { IoIosArrowDropdown } from "react-icons/io";
 import Calendario from '../calendario/Calendario'
-import SearchBar from '../searchBar/SearchBar'
+import SearchBar from '../searchBar/SearchBar';
+
 
 const BarraBusquedaHome = ({ onCategoryChange }) => {
   const [searchTerm, setSearchTerm] = useState('');

@@ -10,22 +10,6 @@ import './RedesProducto.css';
 const RedesProducto = ({ isOpen, onRequestClose }) => {
   const { id } = useParams();
   const { fetchProductById } = useApi(); 
-  /*const fetchProductById = async (id) => {
-    // Simulamos datos de un producto
-    return {
-      id: id,
-      name: "Guitarra The Essential Les Paul",
-      images: [
-        { imageData: "imagen_1_base64" },
-        { imageData: "imagen_2_base64" },
-        { imageData: "imagen_3_base64" },
-        { imageData: "imagen_4_base64" },
-        { imageData: "imagen_5_base64" }
-      ],
-      price: 100,
-      description: "La guitarra eléctrica de cuerpo sólido GIBSON Modern Collection Les Paul Classic (LPCS00TRNH1) fusiona el estilo de la Les Paul de principios de los años 60 con algunas modificaciones funcionales y probadas en el tiempo. Como era de esperar, la LP Classic está fabricada con un cuerpo de caoba y tapa de arce, junto con un mástil de caoba de perfil delgado y diapasón de palo de rosa encuadernado."
-    };
-  }; */
   const [product, setProduct] = useState(null);
   const [message, setMessage] = useState('');
   const [linkCopied, setLinkCopied] = useState(false);
@@ -97,8 +81,6 @@ const RedesProducto = ({ isOpen, onRequestClose }) => {
               </a>
           </div>
 
-          <hr/>
-
 
           <div className='container-producto'>
             
@@ -109,12 +91,15 @@ const RedesProducto = ({ isOpen, onRequestClose }) => {
                   <img
                     src={`data:image/jpeg;base64,${product.images[0].imageData}`}
                     alt={`${product.name}-image-0`}
+                    className="img-1"
                   />
                 )}
               </div>
               <div className="container-detalle-producto">
-                  <h4 className='detalle-titulo'>{product.name}</h4>
+                <div className="detalle-producto">
+                  <h2>{product.name}</h2>
                   <p className='detalle-descripcion'>{product.description}</p>
+                </div>
               </div>
             </>
             )}

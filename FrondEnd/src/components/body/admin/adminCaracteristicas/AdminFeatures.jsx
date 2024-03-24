@@ -34,7 +34,7 @@ const AdminFeatures = () => {
   const CustomActionsCell = ({ id, name, icon }) => (
     <div>
       
-      <button className="icon-button eliminate" onClick={() => navigate("/admin/Administrar-Caracteristicas/:id")}>
+      <button className="icon-button eliminate" onClick={() => navigate(`/admin/Administrar-Caracteristicas/editar-caracteristica/${id}`)}>
         <img src={editIcon} alt="Editar" />
       </button>
       <button className="icon-button eliminate" onClick={() => handleDeleteClick(id, name, icon)}>

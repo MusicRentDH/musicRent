@@ -122,6 +122,7 @@
   
   .table-container{
   margin-top: 120px;
+  min-height: 80vh;
   }
   
   .modal{

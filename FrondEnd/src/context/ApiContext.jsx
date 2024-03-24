@@ -352,8 +352,24 @@ export const ApiProvider = ({ children }) => {
     }
   };
 
+  const fetchProductsByName = async (name) => {
+    try {
+      const response = await fetch(`http://localhost:8081/api/admin/products/search/${name}`);
+      if (response.ok) {
+        const product = await response.json();
+        return product;
+      } else {
+        setError('Error fetching product by name');
+        return null;
+      }
+    } catch (error) {
+      setError('Error fetching product by name');
+      return null;
+    }
+  };
+
   return (
-    <ApiContext.Provider value={{ productos, loading, error, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct, caracteristicas, deleteFeature, editFeature, createFeature, fetchFeatureById, fetchFeatureOfAProduct, deleteCaracteristic  }}>
+    <ApiContext.Provider value={{ productos, loading, error, fetchProductsByName, deleteProduct, createProduct, fetchProductById, fetchProductsByCategory, users, categorias, createCategory, createAccount, loggedInUser, updateLoggedInUser, editProduct, caracteristicas, deleteFeature, editFeature, createFeature, fetchFeatureById, fetchFeatureOfAProduct, deleteCaracteristic  }}>
       {children}
     </ApiContext.Provider>
   );

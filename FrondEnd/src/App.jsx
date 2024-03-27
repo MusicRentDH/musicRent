@@ -17,6 +17,7 @@ import CrearCuenta from "./components/body/user/crearCuenta/CrearCuenta";
 import IniciarSesion from "./components/body/user/login/IniciarSesion";
 import Perfil from "./components/body/user/Perfil/Perfil";
 import EditarProducto from "./components/body/admin/adminProducts/editarProducto/EditarProducto";
+import EditarCaracteristicas from "./components/body/admin/adminCaracteristicas/editCaracteristicas/EditarCaracteristicas"
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
               /* administrar caracteristicas
               <Route path="/admin/Administrar-Caracteristicas" element={<AdminFeatures />} />
               <Route path= "/admin/Administrar-Caracteristicas/crear-nueva" element ={<CrearFeatures/>} />
+              <Route path= "/admin/Administrar-Caracteristicas/editar-caracteristica/:id" element ={<EditarCaracteristicas/>} />
               <Route path="*" element={<p>Not found</p>} />
             </Routes>
             </div>

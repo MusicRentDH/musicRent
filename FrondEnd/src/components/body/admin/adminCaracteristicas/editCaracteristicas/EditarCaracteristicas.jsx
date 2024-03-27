@@ -31,24 +31,6 @@ const EditarCaracteristicas = () => {
     }
   };
 
-  const fetchInstrumentData = async () => {
-    try {
-      const product = await fetchProductById(id);
-
-      if (product) {
-        setInstrumentName(product.name);
-        setInstrumentDescription(product.description);
-        setPrice(product.price || 0);
-        setSelectedCategory(product.categoryId);
-        // Asegúrate de que el campo price y categoryId existan en tu objeto product
-      } else {
-        console.error('Error fetching product data:', id);
-      }
-    } catch (error) {
-      console.error('Error fetching product data:', error);
-    }
-  };
-
   const validateForm = () => {
     const errors = {};
 
@@ -75,16 +57,16 @@ const EditarCaracteristicas = () => {
       });
 
       try {
-       
+        // Utiliza la función createProduct del contexto en lugar de hacer la solicitud directamente
         await editFeature(formDataObject, id);
         
 
         setShowModal(true);
 
         // Limpiar el formulario
-        /* setTitulo('');
+        setTitulo('');
         setImage(null);
-        setValidationErrors({}); */
+        setValidationErrors({});
       } catch (error) {
         console.error('Error al enviar el formulario:', error);
       }
